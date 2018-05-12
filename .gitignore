@@ -1,0 +1,9 @@
+node_modules/
+.vscode/
+dist/
+package-lock.json
+*.tgz
+
+# Testing
+.nyc_output/
+coverage/
