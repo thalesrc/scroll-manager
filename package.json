@@ -1,10 +1,15 @@
 {
   "name": "@gen-tech/scroll-manager",
   "version": "0.0.0",
-  "description": "",
+  "description": "Improved Scroll Events & Scroll Management",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "homepage": "https://gen-tech.github.io/scroll-manager",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "tsc",
+    "document": "typedoc --out docs --excludeNotExported --disableOutputCheck --gitRevision master",
+    "test": "nyc mocha --recursive --compilers ts:ts-node/register src/*.spec.ts src/**/*.spec.ts",
+    "cover": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -15,12 +20,48 @@
     "scroll",
     "manager",
     "events",
+    "observer",
     "observable"
   ],
   "author": "alisahinozcelik@gmail.com",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/gen-tech/scroll-manager/issues"
   },
-  "homepage": "https://github.com/gen-tech/scroll-manager#readme"
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "node_modules/",
+      "./src/index.ts",
+      "./src/**/*.spec.ts",
+      "**/*.d.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "json",
+      "html"
+    ],
+    "all": true
+  },
+  "dependencies": {
+    "rxjs": "^6.1.0",
+    "smoothscroll-polyfill": "^0.4.3",
+    "tslib": "^1.9.0"
+  },
+  "devDependencies": {
+    "ts-node": "^6.0.3",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.8.3",
+    "update-json": "^1.0.0"
+  }
 }
