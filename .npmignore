@@ -1,0 +1,14 @@
+node_modules/
+docs/
+.vscode/
+src/
+*.tgz
+package-lock.json
+
+.editorconfig
+tslint.json
+.travis.yml
+
+# Testing
+.nyc_output/
+coverage/
