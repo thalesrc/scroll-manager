@@ -8,8 +8,7 @@
   "scripts": {
     "prepare": "tsc",
     "document": "typedoc --out docs --excludeNotExported --excludePrivate --disableOutputCheck --gitRevision master",
-    "test": "karma start --single-run",
-    "cover": "nyc report --temp-directory=coverage --reporter=json | coveralls"
+    "test": "karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -44,9 +43,10 @@
     "jasmine": "^3.1.0",
     "karma": "^2.0.2",
     "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.2",
+    "karma-coveralls": "^1.2.1",
     "karma-jasmine": "^1.1.2",
     "karma-typescript": "^3.0.12",
-    "nyc": "^11.7.3",
     "typedoc": "^0.11.1",
     "typescript": "^2.8.3",
     "update-json": "^1.0.0"
