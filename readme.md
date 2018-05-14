@@ -1,5 +1,5 @@
 # @gen-tech/scroll-manager
-Javascript utility functions for web development
+Improved Scroll Events & Scroll Management
 
 [![travis](https://travis-ci.org/gen-tech/scroll-manager.svg)](https://travis-ci.org/gen-tech/scroll-manager)
 [![Coverage Status](https://coveralls.io/repos/github/gen-tech/scroll-manager/badge.svg?branch=master)](https://coveralls.io/github/gen-tech/scroll-manager?branch=master)
