@@ -1,4 +1,4 @@
-import "jest";
+import "jasmine";
 
 import { ScrollObserver } from "./scroll-observer";
 
