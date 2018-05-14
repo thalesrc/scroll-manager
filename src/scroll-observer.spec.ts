@@ -1,10 +1,9 @@
-import "jasmine";
+import "jest";
 
 import { ScrollObserver } from "./scroll-observer";
 
 describe("Scroll Observer", () => {
-  it("should hello world", () => {
-    console.log(ScrollObserver);
+  it("should initialize properly", () => {
     expect(new ScrollObserver(document.createElement("div"))).toBeTruthy();
   });
 });

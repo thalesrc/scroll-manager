@@ -96,13 +96,11 @@ export class ScrollObserver {
 		public target: TScrollableContent,
 		private throttleTime = 90
 	) {
-		if (target instanceof Document) {
-      this.scrollPositionGetter = browser === "Microsoft Edge" || browser === "Safari"
-        ? () => window.scrollY
-        : () => (<Document>this.target).documentElement.scrollTop;
-    } else {
-      this.scrollPositionGetter = () => (<HTMLElement>this.target).scrollTop;
-    }
+    this.scrollPositionGetter = !(target instanceof Document)
+      ? () => (<HTMLElement>target).scrollTop
+      : browser === "Microsoft Edge" || browser === "Safari"
+      ? () => window.scrollY
+      : () => (<Document>target).documentElement.scrollTop;
 
     this._scrollBase = fromEvent<Event>(target, "scroll")
       .pipe(startWith(null))
