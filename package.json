@@ -9,7 +9,7 @@
     "prepare": "tsc",
     "document": "typedoc --out docs --excludeNotExported --excludePrivate --disableOutputCheck --gitRevision master",
     "test": "karma start --single-run",
-    "cover": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls"
+    "cover": "nyc report --temp-directory=coverage --reporter=json | coveralls"
   },
   "repository": {
     "type": "git",
