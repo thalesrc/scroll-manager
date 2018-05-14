@@ -9,6 +9,7 @@
     "prepare": "tsc",
     "document": "typedoc --out docs --excludeNotExported --disableOutputCheck --gitRevision master",
     "test": "karma start --single-run",
+    "test:debug": "karma start",
     "cover": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
@@ -46,6 +47,7 @@
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.2",
     "karma-jasmine": "^1.1.2",
+    "karma-phantomjs-launcher": "^1.0.4",
     "karma-typescript": "^3.0.12",
     "typedoc": "^0.11.1",
     "typescript": "^2.8.3",

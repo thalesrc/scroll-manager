@@ -1,7 +1,10 @@
 import "jasmine";
 
+import { ScrollObserver } from "./scroll-observer";
+
 describe("Scroll Observer", () => {
   it("should hello world", () => {
-    expect("a").toBe("a");
+    console.log(ScrollObserver);
+    expect(new ScrollObserver(document.createElement("div"))).toBeTruthy();
   });
 });

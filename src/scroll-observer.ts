@@ -175,7 +175,7 @@ export class ScrollObserver {
 	 *
 	 * Fires the scroll position on every scroll event
 	 *
-	 * _By default, throttles events for every 90ms, use [throttled]{@link ScrollObserver#throttled} if needed_
+	 * _By default, throttles events for every [90ms]{@link ScrollObserver#throttleTime}, use [throttleBy]{@link ScrollObserver#throttled} if need something else_
 	 */
 	get scroll(): Observable<number> {
 		return this.throttleBy(this.throttleTime);
@@ -189,7 +189,7 @@ export class ScrollObserver {
 	 * @param time Time to throttle events
 	 */
 	public throttleBy(time: number): Observable<number> {
-		if (time === 0) {
+		if (time <= 0) {
 			return this._scrollBase;
 		}
 
