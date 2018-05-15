@@ -106,7 +106,15 @@ export class ScrollObserver {
       : () => (<Document>target).documentElement.scrollTop;
 
     this._scrollBase = new Observable(subscriber => {
-        (target instanceof Document ? window : target).addEventListener("scroll", e => subscriber.next());
+        let _target: EventTarget = target instanceof Document ? window : target;
+
+        const handler = () => subscriber.next();
+
+        _target.addEventListener("scroll", handler);
+
+        return () => {
+          _target.removeEventListener("scroll", handler);
+        };
       })
       .pipe(startWith(null))
       .pipe(map(e => this.scrollPosition))
