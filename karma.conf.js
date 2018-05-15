@@ -10,10 +10,10 @@ module.exports = function (config) {
       "**/*.ts": "karma-typescript"
     },
     reporters: [
-      'progress', "karma-typescript", "coverage"
+      'progress', "karma-typescript", "coverage", "coveralls"
     ],
     coverageReporter: {
-      type: 'in-memory',
+      type: 'lcovonly',
       dir: 'coverage/',
       reporters: [
         { directory: 'coverage/', type: 'lcovonly', subdir: '.' }
