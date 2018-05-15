@@ -13,7 +13,14 @@ module.exports = function (config) {
       'progress', "karma-typescript", "coverage"
     ],
     coverageReporter: {
-      type: 'in-memory'
+      type: 'in-memory',
+      dir: 'coverage/',
+      reporters: [
+        { directory: 'coverage/', type: 'lcovonly', subdir: '.' }
+      ],
+      instrumenterOptions: {
+        istanbul: { noCompact: true }
+      }
     },
     karmaTypescriptConfig: {
       bundlerOptions: {
@@ -24,10 +31,6 @@ module.exports = function (config) {
       },
       reports: {
         lcovonly: {
-          directory: 'coverage/',
-          subdirectory: './'
-        },
-        json: {
           directory: 'coverage/',
           subdirectory: './'
         },
