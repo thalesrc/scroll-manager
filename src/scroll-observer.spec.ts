@@ -1,7 +1,7 @@
 import "jasmine";
 
 import { interval, noop, Subscription, Observable } from "rxjs";
-import { take } from "rxjs/operators";
+import { take, skip, takeUntil, first } from "rxjs/operators";
 import { ScrollObserver } from "./scroll-observer";
 
 let testContainer: HTMLDivElement;
@@ -18,10 +18,13 @@ describe("Scroll Observer", () => {
     document.body.appendChild(testContainer);
   });
 
-  beforeEach(() => {
+  beforeEach(done => {
     Object.keys(subscriptions).forEach(sub => subscriptions[sub].unsubscribe());
     window.scrollTo(0, 0);
     testContainer.innerHTML = "<div style=\"height: 1000vh;\"></div>";
+    setTimeout(() => {
+      done();
+    }, 100);
   });
 
   it("should initialize properly", () => {
@@ -62,40 +65,36 @@ describe("Scroll Observer", () => {
 
   it("should throttle scroll events", done => {
     const docObserver = new ScrollObserver(document);
-    const aHundredMs = new ScrollObserver(document, 100);
     const twoHundredsMs = new ScrollObserver(document, 200);
     let docObserverEvents = 0;
-    let aHundredMsEvents = 0;
     let twoHundredsMsEvents = 0;
-
-    interval(10)
-      .pipe(take(50))
-      .subscribe(
-        i => {
-          window.scrollTo(0, i * 10);
-        },
-        () => fail(),
-        () => {
-          setTimeout(() => {
-            expect(docObserverEvents).toBe(6); // Should throttle by 90ms by default
-            expect(aHundredMsEvents).toBe(5);
-            expect(twoHundredsMsEvents).toBe(3);
-            done();
-          }, 500);
-        }
-      );
 
     subscriptions["default"] = docObserver.scroll.subscribe(() => {
       docObserverEvents++;
     });
 
-    subscriptions["100"] = aHundredMs.scroll.subscribe(() => {
-      aHundredMsEvents++;
-    });
 
     subscriptions["200"] = twoHundredsMs.scroll.subscribe(() => {
       twoHundredsMsEvents++;
     });
+
+    setTimeout(() => {
+      interval(20)
+      .pipe(takeUntil(interval(500).pipe(first())))
+      .subscribe(
+        i => {
+          window.scrollTo(0, (i + 1) * 10);
+        },
+        () => fail(),
+        () => {
+          setTimeout(() => {
+            expect(docObserverEvents).toBe(6); // Should throttle by 90ms by default
+            expect(twoHundredsMsEvents).toBe(3);
+            done();
+          }, 500);
+        }
+      );
+    }, 100);
   });
 
   it("should not throttle when throttleBy gets 0 as argument", done => {

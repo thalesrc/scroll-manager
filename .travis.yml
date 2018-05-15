@@ -12,6 +12,7 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 before_script: node ./scripts/tag-update $TRAVIS_TAG
+after_success: npm run cover
 deploy:
   provider: npm
   skip_cleanup: true
