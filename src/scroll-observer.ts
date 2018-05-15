@@ -91,6 +91,9 @@ export class ScrollObserver {
 	/**
 	 * @param target Scrolling Content
 	 * @param throttleTime Time interval to throttle scroll events
+   * > The throttle time under 90ms will not work well because of performance prospects.
+   * > It will fire much less event than expected.
+   * > Use in caution!
 	 */
 	constructor(
 		public target: TScrollableContent,
@@ -102,7 +105,9 @@ export class ScrollObserver {
       ? () => window.scrollY
       : () => (<Document>target).documentElement.scrollTop;
 
-    this._scrollBase = fromEvent<Event>(target, "scroll")
+    this._scrollBase = new Observable(subscriber => {
+        (target instanceof Document ? window : target).addEventListener("scroll", e => subscriber.next());
+      })
       .pipe(startWith(null))
       .pipe(map(e => this.scrollPosition))
       .pipe(share());
