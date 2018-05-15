@@ -10,7 +10,7 @@ module.exports = function (config) {
       "**/*.ts": "karma-typescript"
     },
     reporters: [
-      'progress', "coverage", "karma-typescript"
+      'progress', "karma-typescript", "coverage"
     ],
     coverageReporter: {
       type: 'in-memory'
@@ -45,6 +45,11 @@ module.exports = function (config) {
         flags: ['--no-sandbox']
       }
     },
+    client: {
+      jasmine: {
+        random: false
+      }
+    }
   };
 
   if (process.env.TRAVIS) {
