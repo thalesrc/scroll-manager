@@ -10,18 +10,18 @@ module.exports = function (config) {
       "**/*.ts": "karma-typescript"
     },
     reporters: [
-      'progress', "karma-typescript", "coverage", "coveralls"
+      'progress', "karma-typescript"
     ],
-    coverageReporter: {
-      type: 'lcovonly',
-      dir: 'coverage/',
-      reporters: [
-        { directory: 'coverage/', type: 'lcovonly', subdir: '.' }
-      ],
-      instrumenterOptions: {
-        istanbul: { noCompact: true }
-      }
-    },
+    // coverageReporter: {
+    //   type: 'lcovonly',
+    //   dir: 'coverage/',
+    //   reporters: [
+    //     { directory: 'coverage/', type: 'lcovonly', subdir: '.' }
+    //   ],
+    //   instrumenterOptions: {
+    //     istanbul: { noCompact: true }
+    //   }
+    // },
     karmaTypescriptConfig: {
       bundlerOptions: {
         sourceMap: true
@@ -57,7 +57,7 @@ module.exports = function (config) {
 
   if (process.env.TRAVIS) {
     configuration.browsers = ['Chrome_travis_ci'];
-    configuration.reporters.push("coveralls");
+    // configuration.reporters.push("coveralls");
   }
 
   config.set(configuration);
