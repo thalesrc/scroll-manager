@@ -51,7 +51,21 @@ export class ScrollObserver {
    *
    * Will be defined according to the target type
    */
-  private scrollPositionGetter: () => number;
+  private _scrollPositionGetter: () => number;
+
+  /**
+   * Target Height Getter
+   *
+   * Will be defined according to the target type
+   */
+  private _targetHeightGetter: () => number;
+
+  /**
+   * Scrollable Height Getter
+   *
+   * Will be defined according to the target type
+   */
+  private _scrollableHeightGetter: () => number;
 
   /**
    * Fires the scroll position when scroll has been started
@@ -99,24 +113,29 @@ export class ScrollObserver {
     public target: TScrollableContent,
     private throttleTime = 90
   ) {
-    this.scrollPositionGetter = !(target instanceof Document)
+    this._scrollPositionGetter = !(target instanceof Document)
       ? () => (<HTMLElement>target).scrollTop
       : browser === "Microsoft Edge" || browser === "Safari"
       ? () => window.scrollY
       : () => (<Document>target).documentElement.scrollTop;
 
+    this._targetHeightGetter = target instanceof Document
+      ? () => window.innerHeight
+      : () => target.offsetHeight;
+
+    this._scrollableHeightGetter = target instanceof Document
+      ? () => document.body.clientHeight
+      : () => target.scrollHeight;
+
     this._scrollBase = new Observable(subscriber => {
         let _target: EventTarget = target instanceof Document ? window : target;
-
         const handler = () => subscriber.next();
 
         _target.addEventListener("scroll", handler);
+        subscriber.next();
 
-        return () => {
-          _target.removeEventListener("scroll", handler);
-        };
+        return () => _target.removeEventListener("scroll", handler);
       })
-      .pipe(startWith(null))
       .pipe(map(e => this.scrollPosition))
       .pipe(share());
 
@@ -157,28 +176,21 @@ export class ScrollObserver {
    * Returns the height of the target
    */
   private get targetHeight(): number {
-    if (this.target instanceof Document) {
-      return window.innerHeight;
-    }
-    return this.target.clientHeight;
+    return this._targetHeightGetter();
   }
 
   /**
    * Returns the scrollable height of the target
    */
   private get scrollableHeight(): number {
-    if (this.target instanceof Document) {
-      return document.body.clientHeight;
-    }
-
-    return this.target.scrollHeight;
+    return this._scrollableHeightGetter();
   }
 
   /**
    * Returns the scroll position
    */
   private get scrollPosition(): number {
-    return this.scrollPositionGetter();
+    return this._scrollPositionGetter();
   }
 
   /**
