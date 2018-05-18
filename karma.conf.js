@@ -23,6 +23,10 @@ module.exports = function (config) {
     //   }
     // },
     karmaTypescriptConfig: {
+      include: {
+        mode: "replace",
+        values: ["**/*.ts"]
+      },
       bundlerOptions: {
         sourceMap: true
       },

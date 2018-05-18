@@ -187,9 +187,9 @@ export class ScrollObserver {
   }
 
   /**
-   * Returns the scroll position
+   * Returns the scroll position of the target
    */
-  private get scrollPosition(): number {
+  public get scrollPosition(): number {
     return this._scrollPositionGetter();
   }
 
