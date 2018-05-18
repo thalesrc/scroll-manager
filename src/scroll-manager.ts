@@ -16,7 +16,16 @@ export class ScrollManager {
 	/**
 	 * Keeps ScrollObserver instances of the scrollable targets
 	 */
-	private _buffer = new WeakMap<TScrollableContent, ScrollObserver>();
+  private _buffer = new WeakMap<TScrollableContent, ScrollObserver>();
+
+  /**
+   * Scroll Manager Constructor
+   * @param observerThrottleTime Throttling time for scroll-observers
+   */
+  constructor(
+    private observerThrottleTime?: number
+  ) {
+  }
 
 	/**
    * #### Observe a scrollable target
@@ -36,7 +45,7 @@ export class ScrollManager {
 	 */
 	public observe(target: TScrollableContent): ScrollObserver {
 		if (!this._buffer.has(target)) {
-			this._buffer.set(target, new ScrollObserver(target, target instanceof Document ? 0 : undefined));
+			this._buffer.set(target, new ScrollObserver(target, this.observerThrottleTime));
 		}
 		return this._buffer.get(target);
 	}
