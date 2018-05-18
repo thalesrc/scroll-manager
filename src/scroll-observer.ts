@@ -128,7 +128,7 @@ export class ScrollObserver {
       : () => target.scrollHeight;
 
     this._scrollBase = new Observable(subscriber => {
-        let _target: EventTarget = target instanceof Document ? window : target;
+        const _target: EventTarget = target instanceof Document ? window : target;
         const handler = () => subscriber.next();
 
         _target.addEventListener("scroll", handler);
@@ -158,13 +158,11 @@ export class ScrollObserver {
 
     this.scrollPhase = this._scrollBase
       .pipe(map(e => {
-        if (e === 0) {
-          return ScrollPhase.START;
-        }
-        if (e >= this.scrollableHeight - this.targetHeight) {
-          return ScrollPhase.END;
-        }
-        return ScrollPhase.MID;
+        return e === 0
+          ? ScrollPhase.START
+          : e >= this.scrollableHeight - this.targetHeight
+          ? ScrollPhase.END
+          : ScrollPhase.MID;
       }))
       .pipe(distinctUntilChanged());
 
@@ -187,9 +185,9 @@ export class ScrollObserver {
   }
 
   /**
-   * Returns the scroll position
+   * Returns the scroll position of the target
    */
-  private get scrollPosition(): number {
+  public get scrollPosition(): number {
     return this._scrollPositionGetter();
   }
 
