@@ -1,3 +1,6 @@
 import { ScrollManager } from "./scroll-manager";
 
-export const scrollManager = new ScrollManager();
+export { ScrollManager, IScrollToElementOptions } from "./scroll-manager";
+export { ScrollObserver, ScrollDirection, ScrollPhase, TScrollableContent } from "./scroll-observer";
+
+export default new ScrollManager();
