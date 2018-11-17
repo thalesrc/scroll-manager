@@ -167,9 +167,8 @@
 								</div>
 								<hr>
 								<p>Example:</p>
-								<pre><code class="lang-typescript">manager.root.scroll.subscribe(<span class="hljs-function"><span class="hljs-params">position</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(position));
-manager.root.scrollDirectionChange.subscribe(<span class="hljs-function"><span class="hljs-params">direction</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(direction));
-</code></pre>
+								<pre><code class="language-typescript">manager.root.scroll.subscribe(<span class="hljs-function"><span class="hljs-params">position</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(position));
+manager.root.scrollDirectionChange.subscribe(<span class="hljs-function"><span class="hljs-params">direction</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(direction));</code></pre>
 								<hr>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="_scroll_observer_.scrollobserver.html" class="tsd-signature-type">ScrollObserver</a></h4>
@@ -198,13 +197,12 @@ manager.root.scrollDirectionChange.subscribe(<span class="hljs-function"><span c
 								</div>
 								<hr>
 								<p>Example:</p>
-								<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> element = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"#content"</span>);
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> element = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"#content"</span>);
 <span class="hljs-keyword">const</span> contentScrollObserver = manager.observe(element);
 
 contentScrollObserver.scroll.subscribe(<span class="hljs-function"><span class="hljs-params">position</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(position));
 
-contentScrollObserver.scrollDirectionChange.subscribe(<span class="hljs-function"><span class="hljs-params">direction</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(direction));
-</code></pre>
+contentScrollObserver.scrollDirectionChange.subscribe(<span class="hljs-function"><span class="hljs-params">direction</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(direction));</code></pre>
 								<hr>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -239,8 +237,7 @@ contentScrollObserver.scrollDirectionChange.subscribe(<span class="hljs-function
 								</div>
 								<hr>
 								<p>Example:</p>
-								<pre><code class="lang-typescript">manager.scrollToElement(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"#next-content"</span>))
-</code></pre>
+								<pre><code class="language-typescript">manager.scrollToElement(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"#next-content"</span>))</code></pre>
 								<hr>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
