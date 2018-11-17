@@ -6,7 +6,7 @@
   "typings": "dist/index.d.ts",
   "homepage": "https://gen-tech.github.io/scroll-manager",
   "scripts": {
-    "prepublishOnly": "gtvu $TRAVIS_TAG && tsc",
+    "prepublishOnly": "tsc",
     "document": "typedoc --out docs --excludeNotExported --excludePrivate --disableOutputCheck --gitRevision master",
     "prepare-github-pages": "npm run document && echo \"\" > ./docs/.nojekyll",
     "test": "karma start ./karma.conf.js --single-run",
