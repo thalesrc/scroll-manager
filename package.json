@@ -11,7 +11,7 @@
     "prepare-github-pages": "npm run document && echo \"\" > ./docs/.nojekyll",
     "test": "karma start ./karma.conf.js --single-run",
     "test:debug": "karma start",
-    "cover": "node ./scripts/report"
+    "cover": "cat ./coverage/lcovonly | coveralls"
   },
   "repository": {
     "type": "git",
