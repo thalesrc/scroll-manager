@@ -8,6 +8,7 @@
   "scripts": {
     "prepublishOnly": "gtvu $TRAVIS_TAG && tsc",
     "document": "typedoc --out docs --excludeNotExported --excludePrivate --disableOutputCheck --gitRevision master",
+    "prepare-github-pages": "npm run document && echo \"\" > ./docs/.nojekyll",
     "test": "karma start ./karma.conf.js --single-run",
     "test:debug": "karma start",
     "cover": "node ./scripts/report"
