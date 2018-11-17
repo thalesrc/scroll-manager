@@ -1,8 +1,9 @@
 import "jasmine";
 
-import { interval, noop, Subscription, Observable } from "rxjs";
-import { take, skip, takeUntil, first, tap, debounce, debounceTime, switchMap, delay } from "rxjs/operators";
-import { ScrollObserver, ScrollDirection, ScrollPhase } from "./scroll-observer";
+import { interval, Subscription, Observable } from "rxjs";
+import { take, takeUntil, first, tap, debounceTime, switchMap, delay } from "rxjs/operators";
+import { ScrollObserver } from "./scroll-observer";
+import { ScrollDirection, ScrollPhase } from "./models";
 
 let testContainer: HTMLDivElement;
 const subscriptions: {[key: string]: Subscription} = {};

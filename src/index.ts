@@ -1,6 +1,7 @@
 import { ScrollManager } from "./scroll-manager";
 
-export { ScrollManager, IScrollToElementOptions } from "./scroll-manager";
-export { ScrollObserver, ScrollDirection, ScrollPhase, TScrollableContent } from "./scroll-observer";
+export { ScrollManager } from "./scroll-manager";
+export { ScrollObserver } from "./scroll-observer";
+export { ScrollToElementOptions, ScrollableContent, ScrollDirection, ScrollPhase } from "./models";
 
 export default new ScrollManager();

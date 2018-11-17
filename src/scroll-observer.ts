@@ -1,34 +1,7 @@
-import { Observable, fromEvent, merge, empty } from "rxjs";
-import { share, startWith, map, debounceTime, distinctUntilChanged, filter, throttleTime, pairwise, switchMap } from 'rxjs/operators';
+import { Observable, merge, empty } from "rxjs";
+import { share, map, debounceTime, distinctUntilChanged, filter, throttleTime, pairwise, switchMap } from 'rxjs/operators';
 import { name as browser } from "platform";
-
-export type TScrollableContent = Document | HTMLElement;
-
-/**
- * Scroll Direction
- */
-export enum ScrollDirection {
-  UP,
-  DOWN
-}
-
-/**
- * Scrolling Phase
- */
-export enum ScrollPhase {
-  /**
-   * Indicates the scroll content is at starting point
-   */
-  START,
-  /**
-   * Indicates the scroll content is at middle point
-   */
-  MID,
-  /**
-   * Indicates the scroll content has been reached to the end
-   */
-  END
-}
+import { ScrollableContent, ScrollDirection, ScrollPhase } from './models';
 
 /**
  * #### Scroll Observer
@@ -110,7 +83,7 @@ export class ScrollObserver {
    * > Use in caution!
    */
   constructor(
-    public target: TScrollableContent,
+    public target: ScrollableContent,
     private throttleTime = 90
   ) {
     this._scrollPositionGetter = !(target instanceof Document)
@@ -136,19 +109,25 @@ export class ScrollObserver {
 
         return () => _target.removeEventListener("scroll", handler);
       })
-      .pipe(map(e => this.scrollPosition))
-      .pipe(share());
+      .pipe(
+        map(() => this.scrollPosition),
+        share()
+      );
 
     this.scrollEnd = this._scrollBase.pipe(debounceTime(throttleTime));
 
     this.scrollStart = <Observable<number>>merge(this._scrollBase, this.scrollEnd.pipe(map(e => false)))
-      .pipe(distinctUntilChanged((x, y) => x !== false && y !== false))
-      .pipe(filter(val => val !== false));
+      .pipe(
+        distinctUntilChanged((x, y) => x !== false && y !== false),
+        filter(val => val !== false)
+      );
 
     this.scrollDirectionChange = this.scroll
-      .pipe(pairwise())
-      .pipe(map(([prev, next]) => prev < next ? ScrollDirection.DOWN : ScrollDirection.UP))
-      .pipe(distinctUntilChanged((prevDirection, nextDirection) => prevDirection === nextDirection));
+      .pipe(
+        pairwise(),
+        map(([prev, next]) => prev < next ? ScrollDirection.DOWN : ScrollDirection.UP),
+        distinctUntilChanged((prevDirection, nextDirection) => prevDirection === nextDirection)
+      );
 
     this.scrollingDown = this.scrollDirectionChange
       .pipe(switchMap(direction => direction === ScrollDirection.DOWN ? this.scroll : empty()));
@@ -157,14 +136,15 @@ export class ScrollObserver {
       .pipe(switchMap(direction => direction === ScrollDirection.UP ? this.scroll : empty()));
 
     this.scrollPhase = this._scrollBase
-      .pipe(map(e => {
-        return e === 0
+      .pipe(
+        map(scroll => scroll === 0
           ? ScrollPhase.START
-          : e >= this.scrollableHeight - this.targetHeight
+          : scroll >= this.scrollableHeight - this.targetHeight
           ? ScrollPhase.END
-          : ScrollPhase.MID;
-      }))
-      .pipe(distinctUntilChanged());
+          : ScrollPhase.MID
+        ),
+        distinctUntilChanged()
+      );
 
     this.remaining = this._scrollBase
       .pipe(map(scrollPosition => this.scrollableHeight - scrollPosition - this.targetHeight));

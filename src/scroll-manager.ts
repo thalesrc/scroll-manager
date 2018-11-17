@@ -1,22 +1,19 @@
 import "smoothscroll-polyfill";
 
 import { first } from "rxjs/operators";
-import { ScrollObserver, TScrollableContent } from "./scroll-observer";
-
-export interface IScrollToElementOptions {
-	animate?: boolean;
-	offset?: number;
-}
+import { ScrollObserver } from "./scroll-observer";
+import { ScrollToElementOptions, ScrollableContent } from './models';
 
 /**
- * #### Scroll Manager
+ * ### Scroll Manager
  * Manages whole scroll operations
  */
 export class ScrollManager {
+
 	/**
-	 * Keeps ScrollObserver instances of the scrollable targets
-	 */
-  private _buffer = new WeakMap<TScrollableContent, ScrollObserver>();
+   * Keeps ScrollObserver instances of the scrollable targets
+   */
+  private _buffer = new WeakMap<ScrollableContent, ScrollObserver>();
 
   /**
    * Scroll Manager Constructor
@@ -28,7 +25,7 @@ export class ScrollManager {
   }
 
 	/**
-   * #### Observe a scrollable target
+   * ### Observe a scrollable target
    *
    * * * *
    * Example:
@@ -43,7 +40,7 @@ export class ScrollManager {
    * * * *
 	 * @param target Scroll target
 	 */
-	public observe(target: TScrollableContent): ScrollObserver {
+	public observe(target: ScrollableContent): ScrollObserver {
 		if (!this._buffer.has(target)) {
 			this._buffer.set(target, new ScrollObserver(target, this.observerThrottleTime));
 		}
@@ -51,7 +48,7 @@ export class ScrollManager {
 	}
 
 	/**
-	 * #### Window Scroll Observer
+	 * ### Window Scroll Observer
    *
    * * * *
    * Example:
@@ -66,7 +63,7 @@ export class ScrollManager {
 	}
 
 	/**
-	 * #### Scroll the window into an element
+	 * ### Scroll the window into an element
    *
    * * * *
    * Example:
@@ -82,7 +79,7 @@ export class ScrollManager {
 	 */
 	public scrollToElement(
 		element: HTMLElement,
-		{animate = true, offset = 0 }: IScrollToElementOptions = {animate: true, offset: 0}
+		{animate = true, offset = 0 }: ScrollToElementOptions = {animate: true, offset: 0}
 	): Promise<number> {
 		window.scrollBy({top: element.getBoundingClientRect().top + offset, behavior: animate ? "smooth" : "instant"});
 		return this.root.scrollEnd.pipe(first()).toPromise();
@@ -90,6 +87,7 @@ export class ScrollManager {
 
 	/**
 	 * Scrolls to the top smoothly
+   * @returns A promise which resolves when the scrolling is completed
 	 */
 	public scrollTop(): Promise<number> {
 		window.scrollTo({top: 0, behavior: "smooth"});
