@@ -127,13 +127,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Scroll<wbr>Observer<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><a href="../modules/_scroll_observer_.html#tscrollablecontent" class="tsd-signature-type">TScrollableContent</a>, throttleTime<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_scroll_observer_.scrollobserver.html" class="tsd-signature-type">ScrollObserver</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Scroll<wbr>Observer<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><a href="../modules/_models_scrollable_content_type_.html#scrollablecontent" class="tsd-signature-type">ScrollableContent</a>, throttleTime<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_scroll_observer_.scrollobserver.html" class="tsd-signature-type">ScrollObserver</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L103">scroll-observer.ts:103</a></li>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L76">scroll-observer.ts:76</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -141,7 +141,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>target: <a href="../modules/_scroll_observer_.html#tscrollablecontent" class="tsd-signature-type">TScrollableContent</a></h5>
+									<h5>target: <a href="../modules/_models_scrollable_content_type_.html#scrollablecontent" class="tsd-signature-type">ScrollableContent</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Scrolling Content</p>
@@ -175,7 +175,7 @@
 					<div class="tsd-signature tsd-kind-icon">remaining<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L103">scroll-observer.ts:103</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L76">scroll-observer.ts:76</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -187,10 +187,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="scrolldirectionchange" class="tsd-anchor"></a>
 					<h3>scroll<wbr>Direction<wbr>Change</h3>
-					<div class="tsd-signature tsd-kind-icon">scroll<wbr>Direction<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/_scroll_observer_.scrolldirection.html" class="tsd-signature-type">ScrollDirection</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">scroll<wbr>Direction<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/_models_scroll_direction_enum_.scrolldirection.html" class="tsd-signature-type">ScrollDirection</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L83">scroll-observer.ts:83</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L56">scroll-observer.ts:56</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -205,7 +205,7 @@
 					<div class="tsd-signature tsd-kind-icon">scroll<wbr>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L78">scroll-observer.ts:78</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L51">scroll-observer.ts:51</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -217,15 +217,15 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="scrollphase" class="tsd-anchor"></a>
 					<h3>scroll<wbr>Phase</h3>
-					<div class="tsd-signature tsd-kind-icon">scroll<wbr>Phase<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/_scroll_observer_.scrollphase.html" class="tsd-signature-type">ScrollPhase</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">scroll<wbr>Phase<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/_models_scroll_phase_enum_.scrollphase.html" class="tsd-signature-type">ScrollPhase</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L98">scroll-observer.ts:98</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L71">scroll-observer.ts:71</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Fires when scrolling phases has been changed <a href="../enums/_scroll_observer_.scrollphase.html">ScrollPhase</a></p>
+							<p>Fires when scrolling phases has been changed <a href="../enums/_models_scroll_phase_enum_.scrollphase.html">ScrollPhase</a></p>
 						</div>
 					</div>
 				</section>
@@ -235,7 +235,7 @@
 					<div class="tsd-signature tsd-kind-icon">scroll<wbr>Start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L73">scroll-observer.ts:73</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L46">scroll-observer.ts:46</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -250,7 +250,7 @@
 					<div class="tsd-signature tsd-kind-icon">scrolling<wbr>Down<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L88">scroll-observer.ts:88</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L61">scroll-observer.ts:61</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -265,7 +265,7 @@
 					<div class="tsd-signature tsd-kind-icon">scrolling<wbr>Up<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L93">scroll-observer.ts:93</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L66">scroll-observer.ts:66</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -277,10 +277,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="target" class="tsd-anchor"></a>
 					<h3>target</h3>
-					<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <a href="../modules/_scroll_observer_.html#tscrollablecontent" class="tsd-signature-type">TScrollableContent</a></div>
+					<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <a href="../modules/_models_scrollable_content_type_.html#scrollablecontent" class="tsd-signature-type">ScrollableContent</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L113">scroll-observer.ts:113</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L86">scroll-observer.ts:86</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -302,7 +302,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L201">scroll-observer.ts:201</a></li>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L181">scroll-observer.ts:181</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -326,7 +326,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L190">scroll-observer.ts:190</a></li>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L170">scroll-observer.ts:170</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -351,7 +351,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L212">scroll-observer.ts:212</a></li>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L192">scroll-observer.ts:192</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -385,6 +385,21 @@
 						<a href="../modules/_index_.html">"index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="../modules/_models_index_.html">"models/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_models_scroll_direction_enum_.html">"models/scroll-<wbr>direction.enum"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_models_scroll_phase_enum_.html">"models/scroll-<wbr>phase.enum"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_models_scroll_to_element_options_interface_.html">"models/scroll-<wbr>to-<wbr>element-<wbr>options.interface"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_models_scrollable_content_type_.html">"models/scrollable-<wbr>content.type"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_scroll_manager_.html">"scroll-<wbr>manager"</a>
 					</li>
 					<li class="current tsd-kind-external-module">
@@ -394,12 +409,6 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
-						<a href="../enums/_scroll_observer_.scrolldirection.html" class="tsd-kind-icon">Scroll<wbr>Direction</a>
-					</li>
-					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
-						<a href="../enums/_scroll_observer_.scrollphase.html" class="tsd-kind-icon">Scroll<wbr>Phase</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
@@ -445,9 +454,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="../modules/_scroll_observer_.html#tscrollablecontent" class="tsd-kind-icon">TScrollable<wbr>Content</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
