@@ -6,7 +6,7 @@
   "typings": "dist/index.d.ts",
   "homepage": "https://gen-tech.github.io/scroll-manager",
   "scripts": {
-    "prepare": "tsc",
+    "prepublishOnly": "gtvu $TRAVIS_TAG && tsc",
     "document": "typedoc --out docs --excludeNotExported --excludePrivate --disableOutputCheck --gitRevision master",
     "test": "karma start ./karma.conf.js --single-run",
     "test:debug": "karma start",
@@ -34,22 +34,22 @@
   },
   "dependencies": {
     "platform": "^1.3.5",
-    "rxjs": "^6.1.0",
+    "rxjs": "^6.3.3",
     "smoothscroll-polyfill": "^0.4.3",
-    "tslib": "^1.9.0"
+    "tslib": "^1.9.3"
   },
   "devDependencies": {
-    "@types/jasmine": "^2.8.7",
+    "@gen-tech/version-update": "^0.1.2",
+    "@types/jasmine": "^2.8.11",
     "@types/platform": "^1.3.1",
-    "coveralls": "^3.0.1",
-    "jasmine": "^3.1.0",
-    "karma": "^2.0.2",
+    "coveralls": "^3.0.2",
+    "jasmine": "^3.3.0",
+    "karma": "^3.1.1",
     "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^1.1.2",
-    "karma-typescript": "3.0.8",
-    "typedoc": "^0.11.1",
-    "typescript": "^2.8.3",
-    "update-json": "^1.0.0"
+    "karma-jasmine": "^2.0.0",
+    "karma-typescript": "3.0.13",
+    "typedoc": "^0.13.0",
+    "typescript": "^3.1.6"
   },
   "directories": {
     "doc": "docs"

@@ -12,27 +12,8 @@ module.exports = function (config) {
     reporters: [
       'progress', "karma-typescript"
     ],
-    // coverageReporter: {
-    //   type: 'lcovonly',
-    //   dir: 'coverage/',
-    //   reporters: [
-    //     { directory: 'coverage/', type: 'lcovonly', subdir: '.' }
-    //   ],
-    //   instrumenterOptions: {
-    //     istanbul: { noCompact: true }
-    //   }
-    // },
     karmaTypescriptConfig: {
-      include: {
-        mode: "replace",
-        values: ["**/*.ts"]
-      },
-      bundlerOptions: {
-        sourceMap: true
-      },
-      coverageOptions: {
-        instrumentation: true
-      },
+      tsconfig: "./tsconfig.spec.json",
       reports: {
         lcovonly: {
           directory: 'coverage/',
@@ -47,7 +28,7 @@ module.exports = function (config) {
     },
     browsers: ["Chrome"],
     customLaunchers: {
-      Chrome_travis_ci: {
+      Chrome__No_Sandbox: {
         base: 'Chrome',
         flags: ['--no-sandbox']
       }
@@ -60,8 +41,7 @@ module.exports = function (config) {
   };
 
   if (process.env.TRAVIS) {
-    configuration.browsers = ['Chrome_travis_ci'];
-    // configuration.reporters.push("coveralls");
+    configuration.browsers = ['Chrome__No_Sandbox'];
   }
 
   config.set(configuration);
