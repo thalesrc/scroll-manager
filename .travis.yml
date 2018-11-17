@@ -26,10 +26,8 @@ deploy:
     local-dir: docs
     on:
       branch: master
-  - provider: npm
-    skip_cleanup: true
-    email: $NPM_EMAIL
-    api_key: $NPM_TOKEN
+  - provider: script
+    skip-cleanup: true
+    script: npm run prepare-and-publish
     on:
       tags: true
-      repo: gen-tech/scroll-manager
