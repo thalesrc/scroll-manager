@@ -96,11 +96,18 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#remaining" class="tsd-kind-icon">remaining</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#remainingx" class="tsd-kind-icon">remainingX</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#remainingy" class="tsd-kind-icon">remainingY</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrolldirectionchange" class="tsd-kind-icon">scroll<wbr>Direction<wbr>Change</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollend" class="tsd-kind-icon">scroll<wbr>End</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollphase" class="tsd-kind-icon">scroll<wbr>Phase</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollstart" class="tsd-kind-icon">scroll<wbr>Start</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollxdirectionchange" class="tsd-kind-icon">scrollXDirection<wbr>Change</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollxphase" class="tsd-kind-icon">scrollXPhase</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollydirectionchange" class="tsd-kind-icon">scrollYDirection<wbr>Change</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollyphase" class="tsd-kind-icon">scrollYPhase</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollingdown" class="tsd-kind-icon">scrolling<wbr>Down</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollingleft" class="tsd-kind-icon">scrolling<wbr>Left</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollingright" class="tsd-kind-icon">scrolling<wbr>Right</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollingup" class="tsd-kind-icon">scrolling<wbr>Up</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#target" class="tsd-kind-icon">target</a></li>
 							</ul>
@@ -110,12 +117,18 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scroll" class="tsd-kind-icon">scroll</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollposition" class="tsd-kind-icon">scroll<wbr>Position</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollpositionx" class="tsd-kind-icon">scroll<wbr>PositionX</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollpositiony" class="tsd-kind-icon">scroll<wbr>PositionY</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrollx" class="tsd-kind-icon">scrollX</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#scrolly" class="tsd-kind-icon">scrollY</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#throttleby" class="tsd-kind-icon">throttle<wbr>By</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#listen" class="tsd-kind-icon">listen</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#listenx" class="tsd-kind-icon">listenX</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_scroll_observer_.scrollobserver.html#listeny" class="tsd-kind-icon">listenY</a></li>
 							</ul>
 						</section>
 					</div>
@@ -133,7 +146,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L76">scroll-observer.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L269">scroll-observer.ts:269</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -172,10 +185,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="remaining" class="tsd-anchor"></a>
 					<h3>remaining</h3>
-					<div class="tsd-signature tsd-kind-icon">remaining<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">remaining<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_models_scroll_position_interface_.remainingscrollposition.html" class="tsd-signature-type">RemainingScrollPosition</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L76">scroll-observer.ts:76</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L259">scroll-observer.ts:259</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -185,12 +198,42 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="scrolldirectionchange" class="tsd-anchor"></a>
-					<h3>scroll<wbr>Direction<wbr>Change</h3>
-					<div class="tsd-signature tsd-kind-icon">scroll<wbr>Direction<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/_models_scroll_direction_enum_.scrolldirection.html" class="tsd-signature-type">ScrollDirection</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="remainingx" class="tsd-anchor"></a>
+					<h3>remainingX</h3>
+					<div class="tsd-signature tsd-kind-icon">remainingX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L56">scroll-observer.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L264">scroll-observer.ts:264</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Fires the horizontal remaining scrollable content in pixels</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="remainingy" class="tsd-anchor"></a>
+					<h3>remainingY</h3>
+					<div class="tsd-signature tsd-kind-icon">remainingY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L269">scroll-observer.ts:269</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Fires the vertical remaining scrollable content in pixels</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="scrolldirectionchange" class="tsd-anchor"></a>
+					<h3>scroll<wbr>Direction<wbr>Change</h3>
+					<div class="tsd-signature tsd-kind-icon">scroll<wbr>Direction<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/_models_scroll_direction_enum_.horizontalscrolldirection.html" class="tsd-signature-type">HorizontalScrollDirection</a><span class="tsd-signature-symbol"> | </span><a href="../enums/_models_scroll_direction_enum_.verticalscrolldirection.html" class="tsd-signature-type">VerticalScrollDirection</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L214">scroll-observer.ts:214</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -202,10 +245,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="scrollend" class="tsd-anchor"></a>
 					<h3>scroll<wbr>End</h3>
-					<div class="tsd-signature tsd-kind-icon">scroll<wbr>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">scroll<wbr>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_models_scroll_position_interface_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L51">scroll-observer.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L209">scroll-observer.ts:209</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -215,27 +258,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="scrollphase" class="tsd-anchor"></a>
-					<h3>scroll<wbr>Phase</h3>
-					<div class="tsd-signature tsd-kind-icon">scroll<wbr>Phase<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/_models_scroll_phase_enum_.scrollphase.html" class="tsd-signature-type">ScrollPhase</a><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L71">scroll-observer.ts:71</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Fires when scrolling phases has been changed <a href="../enums/_models_scroll_phase_enum_.scrollphase.html">ScrollPhase</a></p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="scrollstart" class="tsd-anchor"></a>
 					<h3>scroll<wbr>Start</h3>
-					<div class="tsd-signature tsd-kind-icon">scroll<wbr>Start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">scroll<wbr>Start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_models_scroll_position_interface_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L46">scroll-observer.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L204">scroll-observer.ts:204</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -245,12 +273,72 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="scrollxdirectionchange" class="tsd-anchor"></a>
+					<h3>scrollXDirection<wbr>Change</h3>
+					<div class="tsd-signature tsd-kind-icon">scrollXDirection<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/_models_scroll_direction_enum_.horizontalscrolldirection.html" class="tsd-signature-type">HorizontalScrollDirection</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L219">scroll-observer.ts:219</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Fires the <code>HorizontalScrollDirection</code> when the horizontal scrolling direction has been changed</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="scrollxphase" class="tsd-anchor"></a>
+					<h3>scrollXPhase</h3>
+					<div class="tsd-signature tsd-kind-icon">scrollXPhase<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/_models_scroll_phase_enum_.scrollphase.html" class="tsd-signature-type">ScrollPhase</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L249">scroll-observer.ts:249</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Fires when scrolling X phase has been changed <a href="../enums/_models_scroll_phase_enum_.scrollphase.html">ScrollPhase</a></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="scrollydirectionchange" class="tsd-anchor"></a>
+					<h3>scrollYDirection<wbr>Change</h3>
+					<div class="tsd-signature tsd-kind-icon">scrollYDirection<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/_models_scroll_direction_enum_.verticalscrolldirection.html" class="tsd-signature-type">VerticalScrollDirection</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L224">scroll-observer.ts:224</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Fires the <code>VerticalScrollDirection</code> when the vertical scrolling direction has been changed</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="scrollyphase" class="tsd-anchor"></a>
+					<h3>scrollYPhase</h3>
+					<div class="tsd-signature tsd-kind-icon">scrollYPhase<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/_models_scroll_phase_enum_.scrollphase.html" class="tsd-signature-type">ScrollPhase</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L254">scroll-observer.ts:254</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Fires when scrolling Y phase has been changed <a href="../enums/_models_scroll_phase_enum_.scrollphase.html">ScrollPhase</a></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="scrollingdown" class="tsd-anchor"></a>
 					<h3>scrolling<wbr>Down</h3>
 					<div class="tsd-signature tsd-kind-icon">scrolling<wbr>Down<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L61">scroll-observer.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L229">scroll-observer.ts:229</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -260,12 +348,42 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="scrollingleft" class="tsd-anchor"></a>
+					<h3>scrolling<wbr>Left</h3>
+					<div class="tsd-signature tsd-kind-icon">scrolling<wbr>Left<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L239">scroll-observer.ts:239</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Fires the scroll position only while scrolling left</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="scrollingright" class="tsd-anchor"></a>
+					<h3>scrolling<wbr>Right</h3>
+					<div class="tsd-signature tsd-kind-icon">scrolling<wbr>Right<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L244">scroll-observer.ts:244</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Fires the scroll position only while scrolling right</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="scrollingup" class="tsd-anchor"></a>
 					<h3>scrolling<wbr>Up</h3>
 					<div class="tsd-signature tsd-kind-icon">scrolling<wbr>Up<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L66">scroll-observer.ts:66</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L234">scroll-observer.ts:234</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -280,7 +398,7 @@
 					<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <a href="../modules/_models_scrollable_content_type_.html#scrollablecontent" class="tsd-signature-type">ScrollableContent</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L86">scroll-observer.ts:86</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L279">scroll-observer.ts:279</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -296,23 +414,23 @@
 					<a name="scroll" class="tsd-anchor"></a>
 					<h3>scroll</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> scroll<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> scroll<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_models_scroll_position_interface_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L181">scroll-observer.ts:181</a></li>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L457">scroll-observer.ts:457</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Base Scrolling Observable</p>
 								</div>
-								<p>Fires the scroll position on every scroll event</p>
-								<p><em>By default, throttles events for every [90ms]{@link ScrollObserver#throttleTime}, use [throttleBy]{@link ScrollObserver#throttled} if need something else</em></p>
+								<p>Fires the scroll positions on every scroll event</p>
+								<p><em>By default, throttles events for every [90ms]{@link ScrollObserver#throttleTime}, use [throttleBy]{@link ScrollObserver#listen} if need something else</em></p>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_models_scroll_position_interface_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -320,13 +438,13 @@
 					<a name="scrollposition" class="tsd-anchor"></a>
 					<h3>scroll<wbr>Position</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> scrollPosition<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> scrollPosition<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_models_scroll_position_interface_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L170">scroll-observer.ts:170</a></li>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L443">scroll-observer.ts:443</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -334,7 +452,99 @@
 									<p>Returns the scroll position of the target</p>
 								</div>
 							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_models_scroll_position_interface_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="scrollpositionx" class="tsd-anchor"></a>
+					<h3>scroll<wbr>PositionX</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> scrollPositionX<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L429">scroll-observer.ts:429</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the scroll position X of the target</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="scrollpositiony" class="tsd-anchor"></a>
+					<h3>scroll<wbr>PositionY</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> scrollPositionY<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L436">scroll-observer.ts:436</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the scroll position Y of the target</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="scrollx" class="tsd-anchor"></a>
+					<h3>scrollX</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> scrollX<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L468">scroll-observer.ts:468</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Base Horizontal Scrolling Observable</p>
+								</div>
+								<p>Fires the horizontal scroll position on every scroll event</p>
+								<p><em>By default, throttles events for every [90ms]{@link ScrollObserver#throttleTime}, use [throttleBy]{@link ScrollObserver#listenX} if need something else</em></p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="scrolly" class="tsd-anchor"></a>
+					<h3>scrollY</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> scrollY<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L479">scroll-observer.ts:479</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Base Vertical Scrolling Observable</p>
+								</div>
+								<p>Fires the vertical scroll position on every scroll event</p>
+								<p><em>By default, throttles events for every [90ms]{@link ScrollObserver#throttleTime}, use [throttleBy]{@link ScrollObserver#listenY} if need something else</em></p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -342,21 +552,85 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="throttleby" class="tsd-anchor"></a>
-					<h3>throttle<wbr>By</h3>
+					<a name="listen" class="tsd-anchor"></a>
+					<h3>listen</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">throttle<wbr>By<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">listen<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_models_scroll_position_interface_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L192">scroll-observer.ts:192</a></li>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L490">scroll-observer.ts:490</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns throttled scroll events by given time</p>
+								</div>
+								<p>Set <code>time</code> argument to <code>0</code> if want to catch all events</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>time: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Time to throttle events</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_models_scroll_position_interface_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="listenx" class="tsd-anchor"></a>
+					<h3>listenX</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">listenX<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L509">scroll-observer.ts:509</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns throttled scrollX events by given time</p>
+								</div>
+								<p>Set <code>time</code> argument to <code>0</code> if want to catch all events</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>time: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Time to throttle events</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="listeny" class="tsd-anchor"></a>
+					<h3>listenY</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">listenY<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-observer.ts#L524">scroll-observer.ts:524</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns throttled scrollY events by given time</p>
 								</div>
 								<p>Set <code>time</code> argument to <code>0</code> if want to catch all events</p>
 							</div>
@@ -381,17 +655,20 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_index_.html">"index"</a>
+					<li class="label tsd-is-external">
+						<span>Internals</span>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_models_index_.html">"models/index"</a>
+						<a href="../modules/_models_scroll_buffer_interface_.html">"models/scroll-<wbr>buffer.interface"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_models_scroll_direction_enum_.html">"models/scroll-<wbr>direction.enum"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_models_scroll_phase_enum_.html">"models/scroll-<wbr>phase.enum"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_models_scroll_position_interface_.html">"models/scroll-<wbr>position.interface"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_models_scroll_to_element_options_interface_.html">"models/scroll-<wbr>to-<wbr>element-<wbr>options.interface"</a>
@@ -404,6 +681,12 @@
 					</li>
 					<li class="current tsd-kind-external-module">
 						<a href="../modules/_scroll_observer_.html">"scroll-<wbr>observer"</a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="../modules/_models_index_.html">"models/index"</a>
 					</li>
 				</ul>
 			</nav>
@@ -421,19 +704,40 @@
 								<a href="_scroll_observer_.scrollobserver.html#remaining" class="tsd-kind-icon">remaining</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#remainingx" class="tsd-kind-icon">remainingX</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#remainingy" class="tsd-kind-icon">remainingY</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_scroll_observer_.scrollobserver.html#scrolldirectionchange" class="tsd-kind-icon">scroll<wbr>Direction<wbr>Change</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_scroll_observer_.scrollobserver.html#scrollend" class="tsd-kind-icon">scroll<wbr>End</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_scroll_observer_.scrollobserver.html#scrollphase" class="tsd-kind-icon">scroll<wbr>Phase</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_scroll_observer_.scrollobserver.html#scrollstart" class="tsd-kind-icon">scroll<wbr>Start</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#scrollxdirectionchange" class="tsd-kind-icon">scrollXDirection<wbr>Change</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#scrollxphase" class="tsd-kind-icon">scrollXPhase</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#scrollydirectionchange" class="tsd-kind-icon">scrollYDirection<wbr>Change</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#scrollyphase" class="tsd-kind-icon">scrollYPhase</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_scroll_observer_.scrollobserver.html#scrollingdown" class="tsd-kind-icon">scrolling<wbr>Down</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#scrollingleft" class="tsd-kind-icon">scrolling<wbr>Left</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#scrollingright" class="tsd-kind-icon">scrolling<wbr>Right</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_scroll_observer_.scrollobserver.html#scrollingup" class="tsd-kind-icon">scrolling<wbr>Up</a>
@@ -447,8 +751,26 @@
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="_scroll_observer_.scrollobserver.html#scrollposition" class="tsd-kind-icon">scroll<wbr>Position</a>
 							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#scrollpositionx" class="tsd-kind-icon">scroll<wbr>PositionX</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#scrollpositiony" class="tsd-kind-icon">scroll<wbr>PositionY</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#scrollx" class="tsd-kind-icon">scrollX</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#scrolly" class="tsd-kind-icon">scrollY</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_scroll_observer_.scrollobserver.html#throttleby" class="tsd-kind-icon">throttle<wbr>By</a>
+								<a href="_scroll_observer_.scrollobserver.html#listen" class="tsd-kind-icon">listen</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#listenx" class="tsd-kind-icon">listenX</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_scroll_observer_.scrollobserver.html#listeny" class="tsd-kind-icon">listenY</a>
 							</li>
 						</ul>
 					</li>

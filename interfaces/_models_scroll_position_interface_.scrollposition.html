@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ScrollDirection | @gen-tech/scroll-manager</title>
+	<title>ScrollPosition | @gen-tech/scroll-manager</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,13 +54,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_models_scroll_direction_enum_.html">&quot;models/scroll-direction.enum&quot;</a>
+					<a href="../modules/_models_scroll_position_interface_.html">&quot;models/scroll-position.interface&quot;</a>
 				</li>
 				<li>
-					<a href="_models_scroll_direction_enum_.scrolldirection.html">ScrollDirection</a>
+					<a href="_models_scroll_position_interface_.scrollposition.html">ScrollPosition</a>
 				</li>
 			</ul>
-			<h1>Enumeration ScrollDirection</h1>
+			<h1>Interface ScrollPosition</h1>
 		</div>
 	</div>
 </header>
@@ -70,85 +70,62 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<h3 id="scroll-direction">Scroll Direction</h3>
+						<h3 id="scroll-position">Scroll Position</h3>
+						<p>Represents the scroll positions</p>
 					</div>
 				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">ScrollPosition</span>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_models_scroll_direction_enum_.scrolldirection.html#down" class="tsd-kind-icon">DOWN</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_models_scroll_direction_enum_.scrolldirection.html#left" class="tsd-kind-icon">LEFT</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_models_scroll_direction_enum_.scrolldirection.html#right" class="tsd-kind-icon">RIGHT</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_models_scroll_direction_enum_.scrolldirection.html#up" class="tsd-kind-icon">UP</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_models_scroll_position_interface_.scrollposition.html#left" class="tsd-kind-icon">left</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_models_scroll_position_interface_.scrollposition.html#top" class="tsd-kind-icon">top</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="down" class="tsd-anchor"></a>
-					<h3>DOWN</h3>
-					<div class="tsd-signature tsd-kind-icon">DOWN<span class="tsd-signature-symbol">:</span> </div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/models/scroll-direction.enum.ts#L13">models/scroll-direction.enum.ts:13</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Scrolling down</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="left" class="tsd-anchor"></a>
-					<h3>LEFT</h3>
-					<div class="tsd-signature tsd-kind-icon">LEFT<span class="tsd-signature-symbol">:</span> </div>
+					<h3>left</h3>
+					<div class="tsd-signature tsd-kind-icon">left<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/models/scroll-direction.enum.ts#L18">models/scroll-direction.enum.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/models/scroll-position.interface.ts#L14">models/scroll-position.interface.ts:14</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Scrolling left</p>
+							<p>Left position in pixels</p>
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="right" class="tsd-anchor"></a>
-					<h3>RIGHT</h3>
-					<div class="tsd-signature tsd-kind-icon">RIGHT<span class="tsd-signature-symbol">:</span> </div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="top" class="tsd-anchor"></a>
+					<h3>top</h3>
+					<div class="tsd-signature tsd-kind-icon">top<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/models/scroll-direction.enum.ts#L23">models/scroll-direction.enum.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/models/scroll-position.interface.ts#L9">models/scroll-position.interface.ts:9</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Scrolling right</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="up" class="tsd-anchor"></a>
-					<h3>UP</h3>
-					<div class="tsd-signature tsd-kind-icon">UP<span class="tsd-signature-symbol">:</span> </div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/models/scroll-direction.enum.ts#L8">models/scroll-direction.enum.ts:8</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Scrolling up</p>
+							<p>Top position in pixels</p>
 						</div>
 					</div>
 				</section>
@@ -160,17 +137,20 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_index_.html">"index"</a>
+					<li class="label tsd-is-external">
+						<span>Internals</span>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_models_index_.html">"models/index"</a>
+						<a href="../modules/_models_scroll_buffer_interface_.html">"models/scroll-<wbr>buffer.interface"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_models_scroll_direction_enum_.html">"models/scroll-<wbr>direction.enum"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_models_scroll_phase_enum_.html">"models/scroll-<wbr>phase.enum"</a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_models_scroll_position_interface_.html">"models/scroll-<wbr>position.interface"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_models_scroll_to_element_options_interface_.html">"models/scroll-<wbr>to-<wbr>element-<wbr>options.interface"</a>
@@ -184,26 +164,29 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_scroll_observer_.html">"scroll-<wbr>observer"</a>
 					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="../modules/_models_index_.html">"models/index"</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_models_scroll_position_interface_.remainingscrollposition.html" class="tsd-kind-icon">Remaining<wbr>Scroll<wbr>Position</a>
+					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-enum tsd-parent-kind-external-module">
-						<a href="_models_scroll_direction_enum_.scrolldirection.html" class="tsd-kind-icon">Scroll<wbr>Direction</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_models_scroll_position_interface_.scrollposition.html" class="tsd-kind-icon">Scroll<wbr>Position</a>
 						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="_models_scroll_direction_enum_.scrolldirection.html#down" class="tsd-kind-icon">DOWN</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_models_scroll_position_interface_.scrollposition.html#left" class="tsd-kind-icon">left</a>
 							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="_models_scroll_direction_enum_.scrolldirection.html#left" class="tsd-kind-icon">LEFT</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="_models_scroll_direction_enum_.scrolldirection.html#right" class="tsd-kind-icon">RIGHT</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="_models_scroll_direction_enum_.scrolldirection.html#up" class="tsd-kind-icon">UP</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_models_scroll_position_interface_.scrollposition.html#top" class="tsd-kind-icon">top</a>
 							</li>
 						</ul>
 					</li>

@@ -222,7 +222,7 @@ contentScrollObserver.scrollDirectionChange.subscribe(<span class="hljs-function
 					<a name="scrolltoelement" class="tsd-anchor"></a>
 					<h3>scroll<wbr>ToElement</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">scroll<wbr>ToElement<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">scroll<wbr>ToElement<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_models_scroll_position_interface_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -233,12 +233,13 @@ contentScrollObserver.scrollDirectionChange.subscribe(<span class="hljs-function
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<h3 id="scroll-the-window-into-an-element">Scroll the window into an element</h3>
+									<h3 id="scroll-to-element">Scroll to Element</h3>
+									<p>Scroll the window into an element</p>
+									<hr>
+									<p>Example:</p>
+									<pre><code class="language-typescript">manager.scrollToElement(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"#next-content"</span>))</code></pre>
+									<hr>
 								</div>
-								<hr>
-								<p>Example:</p>
-								<pre><code class="language-typescript">manager.scrollToElement(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"#next-content"</span>))</code></pre>
-								<hr>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -249,12 +250,12 @@ contentScrollObserver.scrollDirectionChange.subscribe(<span class="hljs-function
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;{animate: true, offset: 0}</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;{animate: true, offsetTop: 0, offsetLeft: 0}</span></h5>
 									<ul class="tsd-parameters">
 									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_models_scroll_position_interface_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise which will be resolved right after the scrolling completed</p>
 						</li>
 					</ul>
@@ -263,13 +264,13 @@ contentScrollObserver.scrollDirectionChange.subscribe(<span class="hljs-function
 					<a name="scrolltop" class="tsd-anchor"></a>
 					<h3>scroll<wbr>Top</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">scroll<wbr>Top<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">scroll<wbr>Top<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_models_scroll_position_interface_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-manager.ts#L92">scroll-manager.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/gen-tech/scroll-manager/blob/master/src/scroll-manager.ts#L95">scroll-manager.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -277,7 +278,7 @@ contentScrollObserver.scrollDirectionChange.subscribe(<span class="hljs-function
 									<p>Scrolls to the top smoothly</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_models_scroll_position_interface_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise which resolves when the scrolling is completed</p>
 						</li>
 					</ul>
@@ -290,17 +291,20 @@ contentScrollObserver.scrollDirectionChange.subscribe(<span class="hljs-function
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_index_.html">"index"</a>
+					<li class="label tsd-is-external">
+						<span>Internals</span>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_models_index_.html">"models/index"</a>
+						<a href="../modules/_models_scroll_buffer_interface_.html">"models/scroll-<wbr>buffer.interface"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_models_scroll_direction_enum_.html">"models/scroll-<wbr>direction.enum"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_models_scroll_phase_enum_.html">"models/scroll-<wbr>phase.enum"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_models_scroll_position_interface_.html">"models/scroll-<wbr>position.interface"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_models_scroll_to_element_options_interface_.html">"models/scroll-<wbr>to-<wbr>element-<wbr>options.interface"</a>
@@ -313,6 +317,12 @@ contentScrollObserver.scrollDirectionChange.subscribe(<span class="hljs-function
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_scroll_observer_.html">"scroll-<wbr>observer"</a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="../modules/_models_index_.html">"models/index"</a>
 					</li>
 				</ul>
 			</nav>
