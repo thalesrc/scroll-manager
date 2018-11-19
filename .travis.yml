@@ -17,7 +17,6 @@ after_success:
   - npm run cover
 before_deploy:
   - npm run prepare-github-pages
-  - gtvu $TRAVIS_TAG --safe
 deploy:
   - provider: pages
     skip-cleanup: true

@@ -1,7 +1,7 @@
 import { Observable, merge, empty } from "rxjs";
 import { share, map, debounceTime, distinctUntilChanged, filter, throttleTime, pairwise, switchMap } from 'rxjs/operators';
 import { name as browser } from "platform";
-import { ScrollableContent, ScrollDirection, ScrollPhase } from './models';
+import { ScrollableContent, ScrollDirection, ScrollPhase, ScrollPosition, HorizontalScrollDirection, VerticalScrollDirection, RemainingScrollPosition } from './models';
 
 /**
  * #### Scroll Observer
@@ -12,19 +12,26 @@ export class ScrollObserver {
    * All the other events are derived from this
    * Fires the scroll position in pixels
    */
-  private _scrollBase: Observable<number>;
+  private _scrollBase: Observable<ScrollPosition>;
 
   /**
    * The buffer for the observables which are throttled by the same time
    */
-  private _buffer: {[key: number]: Observable<number>} = {};
+  private _buffer: {[key: number]: Observable<ScrollPosition>} = {};
 
   /**
-   * Scroll position getter
+   * Scroll X position getter
    *
    * Will be defined according to the target type
    */
-  private _scrollPositionGetter: () => number;
+  private _scrollPositionXGetter: () => number;
+
+  /**
+   * Scroll Y position getter
+   *
+   * Will be defined according to the target type
+   */
+  private _scrollPositionYGetter: () => number;
 
   /**
    * Target Height Getter
@@ -34,6 +41,13 @@ export class ScrollObserver {
   private _targetHeightGetter: () => number;
 
   /**
+   * Target Width Getter
+   *
+   * Will be defined according to the target type
+   */
+  private _targetWidthGetter: () => number;
+
+  /**
    * Scrollable Height Getter
    *
    * Will be defined according to the target type
@@ -41,19 +55,36 @@ export class ScrollObserver {
   private _scrollableHeightGetter: () => number;
 
   /**
+   * Scrollable Width Getter
+   *
+   * Will be defined according to the target type
+   */
+  private _scrollableWidthGetter: () => number;
+
+  /**
    * Fires the scroll position when scroll has been started
    */
-  public scrollStart: Observable<number>;
+  public scrollStart: Observable<ScrollPosition>;
 
   /**
    * Fires the scroll position when scroll has been ended
    */
-  public scrollEnd: Observable<number>;
+  public scrollEnd: Observable<ScrollPosition>;
 
   /**
    * Fires the `ScrollDirection` when the scrolling direction has been changed
    */
   public scrollDirectionChange: Observable<ScrollDirection>;
+
+  /**
+   * Fires the `HorizontalScrollDirection` when the horizontal scrolling direction has been changed
+   */
+  public scrollXDirectionChange: Observable<HorizontalScrollDirection>;
+
+  /**
+   * Fires the `VerticalScrollDirection` when the vertical scrolling direction has been changed
+   */
+  public scrollYDirectionChange: Observable<VerticalScrollDirection>;
 
   /**
    * Fires the scroll position only while scrolling down
@@ -66,14 +97,39 @@ export class ScrollObserver {
   public scrollingUp: Observable<number>;
 
   /**
-   * Fires when scrolling phases has been changed {@link ScrollPhase}
+   * Fires the scroll position only while scrolling left
    */
-  public scrollPhase: Observable<ScrollPhase>;
+  public scrollingLeft: Observable<number>;
+
+  /**
+   * Fires the scroll position only while scrolling right
+   */
+  public scrollingRight: Observable<number>;
+
+  /**
+   * Fires when scrolling X phase has been changed {@link ScrollPhase}
+   */
+  public scrollXPhase: Observable<ScrollPhase>;
+
+  /**
+   * Fires when scrolling Y phase has been changed {@link ScrollPhase}
+   */
+  public scrollYPhase: Observable<ScrollPhase>;
 
   /**
    * Fires the remaining scrollable content in pixels
    */
-  public remaining: Observable<number>;
+  public remaining: Observable<RemainingScrollPosition>;
+
+  /**
+   * Fires the horizontal remaining scrollable content in pixels
+   */
+  public remainingX: Observable<number>;
+
+  /**
+   * Fires the vertical remaining scrollable content in pixels
+   */
+  public remainingY: Observable<number>;
 
   /**
    * @param target Scrolling Content
@@ -86,37 +142,48 @@ export class ScrollObserver {
     public target: ScrollableContent,
     private throttleTime = 90
   ) {
-    this._scrollPositionGetter = !(target instanceof Document)
-      ? () => (<HTMLElement>target).scrollTop
-      : browser === "Microsoft Edge" || browser === "Safari"
-      ? () => window.scrollY
-      : () => (<Document>target).documentElement.scrollTop;
+    // Set up scroll position getters
+    if (!(target instanceof Document)) {
+      this._scrollPositionXGetter = () => (<HTMLElement>target).scrollLeft;
+      this._scrollPositionYGetter = () => (<HTMLElement>target).scrollTop;
+    } else if (browser === "Microsoft Edge" || browser === "Safari") {
+      this._scrollPositionXGetter = () => window.scrollX;
+      this._scrollPositionYGetter = () => window.scrollY;
+    } else {
+      this._scrollPositionXGetter = () => (<Document>target).documentElement.scrollLeft;
+      this._scrollPositionYGetter = () => (<Document>target).documentElement.scrollTop;
+    }
 
-    this._targetHeightGetter = target instanceof Document
-      ? () => window.innerHeight
-      : () => target.offsetHeight;
+    // Set up target size & scrollable content getters
+    if (target instanceof Document) {
+      this._targetHeightGetter = () => window.innerHeight;
+      this._targetWidthGetter = () => window.innerWidth;
+      this._scrollableHeightGetter = () => document.body.clientHeight;
+      this._scrollableWidthGetter = () => document.body.clientWidth;
+    } else {
+      this._targetHeightGetter = () => target.offsetHeight;
+      this._targetWidthGetter = () => target.offsetWidth;
+      this._scrollableHeightGetter = () => target.scrollHeight;
+      this._scrollableWidthGetter = () => target.scrollWidth;
+    }
 
-    this._scrollableHeightGetter = target instanceof Document
-      ? () => document.body.clientHeight
-      : () => target.scrollHeight;
-
-    this._scrollBase = new Observable(subscriber => {
+    // Set up base scroll observable
+    this._scrollBase = new Observable<ScrollPosition>(subscriber => {
         const _target: EventTarget = target instanceof Document ? window : target;
-        const handler = () => subscriber.next();
+        const handler = () => subscriber.next(this.scrollPosition);
 
         _target.addEventListener("scroll", handler);
         subscriber.next();
 
         return () => _target.removeEventListener("scroll", handler);
       })
-      .pipe(
-        map(() => this.scrollPosition),
-        share()
-      );
+      .pipe(share());
 
+    // Set up scroll end
     this.scrollEnd = this._scrollBase.pipe(debounceTime(throttleTime));
 
-    this.scrollStart = <Observable<number>>merge(this._scrollBase, this.scrollEnd.pipe(map(e => false)))
+    // Set up scroll start
+    this.scrollStart = <Observable<ScrollPosition>>merge(this._scrollBase, this.scrollEnd.pipe(map(e => false)))
       .pipe(
         distinctUntilChanged((x, y) => x !== false && y !== false),
         filter(val => val !== false)
@@ -158,6 +225,13 @@ export class ScrollObserver {
   }
 
   /**
+   * Returns the width of the target
+   */
+  private get targetWidth(): number {
+    return this._targetWidthGetter();
+  }
+
+  /**
    * Returns the scrollable height of the target
    */
   private get scrollableHeight(): number {
@@ -165,10 +239,34 @@ export class ScrollObserver {
   }
 
   /**
+   * Returns the scrollable width of the target
+   */
+  private get scrollableWidth(): number {
+    return this._scrollableHeightGetter();
+  }
+
+  /**
+   * Returns the scroll position X of the target
+   */
+  public get scrollPositionX(): number {
+    return this._scrollPositionXGetter();
+  }
+
+  /**
+   * Returns the scroll position Y of the target
+   */
+  public get scrollPositionY(): number {
+    return this._scrollPositionYGetter();
+  }
+
+  /**
    * Returns the scroll position of the target
    */
-  public get scrollPosition(): number {
-    return this._scrollPositionGetter();
+  public get scrollPosition(): ScrollPosition {
+    return {
+      top: this.scrollPositionY,
+      left: this.scrollPositionX
+    };
   }
 
   /**

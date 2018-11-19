@@ -63,8 +63,8 @@ export class ScrollManager {
 	}
 
 	/**
-	 * ### Scroll the window into an element
-   *
+	 * ### Scroll to Element
+   * Scroll the window into an element
    * * * *
    * Example:
    * ```typescript

@@ -1,24 +1,23 @@
 /**
+ * ### Vertical Scroll Direction
+ */
+export enum VerticalScrollDirection {
+  TOP = 1 << 0,
+  BOTTOM = 1 << 1
+}
+
+/**
+ * ### Horizontal Scroll Direction
+ */
+export enum HorizontalScrollDirection {
+  LEFT = 1 << 2,
+  RIGHT = 1 << 3
+}
+
+/**
  * ### Scroll Direction
  */
-export enum ScrollDirection {
-  /**
-   * Scrolling up
-   */
-  UP,
-
-  /**
-   * Scrolling down
-   */
-  DOWN,
-
-  /**
-   * Scrolling left
-   */
-  LEFT,
-
-  /**
-   * Scrolling right
-   */
-  RIGHT,
+export const ScrollDirection = {
+  ...VerticalScrollDirection,
+  ...HorizontalScrollDirection
 }
