@@ -189,24 +189,44 @@ export class ScrollObserver {
         filter(val => val !== false)
       );
 
-    this.scrollDirectionChange = this.scroll
-      .pipe(
-        pairwise(),
-        map(([prev, next]) => prev < next ? ScrollDirection.DOWN : ScrollDirection.UP),
-        distinctUntilChanged((prevDirection, nextDirection) => prevDirection === nextDirection)
-      );
+    // Set up direction X change
+    this.scrollXDirectionChange = this.scrollX.pipe(
+      pairwise(),
+      map(([prev, next]) => prev < next ? ScrollDirection.LEFT : ScrollDirection.RIGHT),
+      distinctUntilChanged()
+    );
 
+    // Set up direction Y change
+    this.scrollYDirectionChange = this.scrollY.pipe(
+      pairwise(),
+      map(([prev, next]) => prev < next ? ScrollDirection.TOP : ScrollDirection.BOTTOM),
+      distinctUntilChanged()
+    );
+
+    // Set up direction change
+    this.scrollDirectionChange = merge(this.scrollXDirectionChange, this.scrollYDirectionChange);
+
+    // Set up scrollingDown
     this.scrollingDown = this.scrollDirectionChange
-      .pipe(switchMap(direction => direction === ScrollDirection.DOWN ? this.scroll : empty()));
+      .pipe(switchMap(direction => direction === ScrollDirection.BOTTOM ? this.scrollY : empty()));
 
+    // Set up scrollingUp
     this.scrollingUp = this.scrollDirectionChange
-      .pipe(switchMap(direction => direction === ScrollDirection.UP ? this.scroll : empty()));
+      .pipe(switchMap(direction => direction === ScrollDirection.TOP ? this.scrollY : empty()));
 
-    this.scrollPhase = this._scrollBase
+    // Set up scrollingLeft
+    this.scrollingLeft = this.scrollDirectionChange
+    .pipe(switchMap(direction => direction === ScrollDirection.LEFT ? this.scrollX : empty()));
+
+    // Set up scrollingRight
+    this.scrollingRight = this.scrollDirectionChange
+      .pipe(switchMap(direction => direction === ScrollDirection.RIGHT ? this.scrollX : empty()));
+
+    this.scrollXPhase = this._scrollBase
       .pipe(
         map(scroll => scroll === 0
           ? ScrollPhase.START
-          : scroll >= this.scrollableHeight - this.targetHeight
+          : scroll >= this._scrollableHeight - this._targetHeight
           ? ScrollPhase.END
           : ScrollPhase.MID
         ),
@@ -214,34 +234,34 @@ export class ScrollObserver {
       );
 
     this.remaining = this._scrollBase
-      .pipe(map(scrollPosition => this.scrollableHeight - scrollPosition - this.targetHeight));
+      .pipe(map(scrollPosition => this._scrollableHeight - scrollPosition - this._targetHeight));
   }
 
   /**
    * Returns the height of the target
    */
-  private get targetHeight(): number {
+  private get _targetHeight(): number {
     return this._targetHeightGetter();
   }
 
   /**
    * Returns the width of the target
    */
-  private get targetWidth(): number {
+  private get _targetWidth(): number {
     return this._targetWidthGetter();
   }
 
   /**
    * Returns the scrollable height of the target
    */
-  private get scrollableHeight(): number {
+  private get _scrollableHeight(): number {
     return this._scrollableHeightGetter();
   }
 
   /**
    * Returns the scrollable width of the target
    */
-  private get scrollableWidth(): number {
+  private get _scrollableWidth(): number {
     return this._scrollableHeightGetter();
   }
 
@@ -276,8 +296,22 @@ export class ScrollObserver {
    *
    * _By default, throttles events for every [90ms]{@link ScrollObserver#throttleTime}, use [throttleBy]{@link ScrollObserver#throttled} if need something else_
    */
-  get scroll(): Observable<number> {
+  public get scroll(): Observable<ScrollPosition> {
     return this.throttleBy(this.throttleTime);
+  }
+
+  public get scrollX(): Observable<number> {
+    return this.scroll.pipe(
+      map(({left}) => left),
+      distinctUntilChanged()
+    );
+  }
+
+  public get scrollY(): Observable<number> {
+    return this.scroll.pipe(
+      map(({top}) => top),
+      distinctUntilChanged()
+    );
   }
 
   /**
@@ -287,7 +321,7 @@ export class ScrollObserver {
    *
    * @param time Time to throttle events
    */
-  public throttleBy(time: number): Observable<number> {
+  public throttleBy(time: number): Observable<ScrollPosition> {
     if (time <= 0) {
       return this._scrollBase;
     }
