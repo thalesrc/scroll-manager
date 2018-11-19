@@ -12,5 +12,11 @@ export interface ScrollToElementOptions {
    * Space between the window top and the element will be scrolled into
    * @default 0
    */
-	offset?: number;
+	offsetTop?: number;
+
+  /**
+   * Space between the window left and the element will be scrolled into
+   * @default 0
+   */
+	offsetLeft?: number;
 }

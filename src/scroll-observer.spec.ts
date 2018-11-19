@@ -1,5 +1,3 @@
-import "jasmine";
-
 import { interval, Subscription, Observable } from "rxjs";
 import { take, takeUntil, first, tap, debounceTime, switchMap, delay } from "rxjs/operators";
 import { ScrollObserver } from "./scroll-observer";
@@ -99,7 +97,7 @@ describe("Scroll Observer", () => {
     }, 100);
   });
 
-  it("should not throttle when throttleBy gets 0 as argument", done => {
+  it("should not throttle when listen gets 0 as argument", done => {
     const docObserver = new ScrollObserver(document);
     let windowCount = 0;
     let observerCount = 0;
@@ -126,7 +124,7 @@ describe("Scroll Observer", () => {
         windowCount++;
       });
 
-    subscriptions["def"] = docObserver.throttleBy(0).subscribe(() => {
+    subscriptions["def"] = docObserver.listen(0).subscribe(() => {
       observerCount++;
     });
   });
@@ -139,21 +137,22 @@ describe("Scroll Observer", () => {
       scrollStartFired++;
     });
 
-    interval(10)
-      .pipe(take(20))
-      .pipe(tap(i => window.scrollTo(0, i * 10)))
-      .pipe(debounceTime(200))
-      .pipe(delay(200))
-      .pipe(first())
-      .pipe(switchMap(() => interval(10)))
-      .pipe(take(20))
-      .pipe(tap(i => window.scrollTo(0, (i + 20) * 10)))
-      .pipe(debounceTime(200))
-      .pipe(delay(200))
-      .pipe(first())
-      .pipe(switchMap(() => interval(10)))
-      .pipe(take(20))
-      .pipe(tap(i => window.scrollTo(0, (i + 40) * 10)))
+    interval(10).pipe(
+      take(20),
+      tap(i => window.scrollTo(0, i * 10)),
+      debounceTime(200),
+      delay(200),
+      first(),
+      switchMap(() => interval(10)),
+      take(20),
+      tap(i => window.scrollTo(0, (i + 20) * 10)),
+      debounceTime(200),
+      delay(200),
+      first(),
+      switchMap(() => interval(10)),
+      take(20),
+      tap(i => window.scrollTo(0, (i + 40) * 10)),
+    )
       .toPromise()
       .then(() => {
         expect(scrollStartFired).toBe(3);
@@ -170,24 +169,25 @@ describe("Scroll Observer", () => {
       scrollStartFired++;
     });
 
-    interval(10)
-      .pipe(take(20))
-      .pipe(tap(i => window.scrollTo(0, i * 10)))
-      .pipe(debounceTime(200))
-      .pipe(delay(200))
-      .pipe(first())
-      .pipe(switchMap(() => interval(10)))
-      .pipe(take(20))
-      .pipe(tap(i => window.scrollTo(0, (i + 20) * 10)))
-      .pipe(debounceTime(200))
-      .pipe(delay(200))
-      .pipe(first())
-      .pipe(switchMap(() => interval(10)))
-      .pipe(take(20))
-      .pipe(tap(i => window.scrollTo(0, (i + 40) * 10)))
-      .pipe(debounceTime(200))
-      .pipe(first())
-      .pipe(delay(200))
+    interval(10).pipe(
+      take(20),
+      tap(i => window.scrollTo(0, i * 10)),
+      debounceTime(200),
+      delay(200),
+      first(),
+      switchMap(() => interval(10)),
+      take(20),
+      tap(i => window.scrollTo(0, (i + 20) * 10)),
+      debounceTime(200),
+      delay(200),
+      first(),
+      switchMap(() => interval(10)),
+      take(20),
+      tap(i => window.scrollTo(0, (i + 40) * 10)),
+      debounceTime(200),
+      first(),
+      delay(200)
+    )
       .toPromise()
       .then(() => {
         expect(scrollStartFired).toBe(3);
@@ -202,34 +202,35 @@ describe("Scroll Observer", () => {
     let upDirectionFired = 0;
     let downDirectionFired = 0;
 
-    observer.scrollDirectionChange.subscribe(dir => {
+    observer.scrollYDirectionChange.subscribe(dir => {
       directionChangedFired++;
 
-      if (dir === ScrollDirection.UP) {
+      if (dir === ScrollDirection.TOP) {
         upDirectionFired++;
       } else {
         downDirectionFired++;
       }
     });
 
-    interval(10)
-      .pipe(take(20))
-      .pipe(tap(i => window.scrollTo(0, i * 10)))
-      .pipe(debounceTime(200))
-      .pipe(delay(200))
-      .pipe(first())
-      .pipe(switchMap(() => interval(10)))
-      .pipe(take(20))
-      .pipe(tap(i => window.scrollTo(0, (20 - i) * 10)))
-      .pipe(debounceTime(200))
-      .pipe(delay(200))
-      .pipe(first())
-      .pipe(switchMap(() => interval(10)))
-      .pipe(take(20))
-      .pipe(tap(i => window.scrollTo(0, i * 10)))
-      .pipe(debounceTime(200))
-      .pipe(first())
-      .pipe(delay(200))
+    interval(10).pipe(
+      take(20),
+      tap(i => window.scrollTo(0, i * 10)),
+      debounceTime(200),
+      delay(200),
+      first(),
+      switchMap(() => interval(10)),
+      take(20),
+      tap(i => window.scrollTo(0, (20 - i) * 10)),
+      debounceTime(200),
+      delay(200),
+      first(),
+      switchMap(() => interval(10)),
+      take(20),
+      tap(i => window.scrollTo(0, i * 10)),
+      debounceTime(200),
+      first(),
+      delay(200)
+    )
       .toPromise()
       .then(() => {
         expect(directionChangedFired).toBe(3);
@@ -253,13 +254,14 @@ describe("Scroll Observer", () => {
       scrollUp++;
     });
 
-    interval(10)
-      .pipe(takeUntil(interval(500).pipe(first())))
-      .pipe(tap(i => window.scrollTo(0, i * 10)))
-      .pipe(debounceTime(200))
-      .pipe(delay(200))
-      .pipe(first())
-      .pipe(delay(200))
+    interval(10).pipe(
+      takeUntil(interval(500).pipe(first())),
+      tap(i => window.scrollTo(0, i * 10)),
+      debounceTime(200),
+      delay(200),
+      first(),
+      delay(200)
+    )
       .toPromise()
       .then(() => {
         expect(scrollDown).toBeGreaterThan(0);
@@ -284,13 +286,14 @@ describe("Scroll Observer", () => {
       scrollUp++;
     });
 
-    interval(10)
-      .pipe(takeUntil(interval(500).pipe(first())))
-      .pipe(tap(i => window.scrollTo(0, (100 - i) * 10)))
-      .pipe(debounceTime(200))
-      .pipe(delay(200))
-      .pipe(first())
-      .pipe(delay(200))
+    interval(10).pipe(
+      takeUntil(interval(500).pipe(first())),
+      tap(i => window.scrollTo(0, (100 - i) * 10)),
+      debounceTime(200),
+      delay(200),
+      first(),
+      delay(200)
+    )
       .toPromise()
       .then(() => {
         expect(scrollUp).toBeGreaterThan(0);
@@ -304,7 +307,7 @@ describe("Scroll Observer", () => {
     const observer = new ScrollObserver(document);
     let phase: ScrollPhase;
 
-    observer.scrollPhase.subscribe(p => {
+    observer.scrollYPhase.subscribe(p => {
       phase = p;
     });
 
@@ -340,7 +343,7 @@ describe("Scroll Observer", () => {
     const observer = new ScrollObserver(testContainer);
     let lastScroll = 0;
 
-    observer.remaining.subscribe(pos => {
+    observer.remainingY.subscribe(pos => {
       lastScroll = pos;
     });
 

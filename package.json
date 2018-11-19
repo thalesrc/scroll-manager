@@ -6,7 +6,7 @@
   "typings": "index.d.ts",
   "homepage": "https://gen-tech.github.io/scroll-manager",
   "scripts": {
-    "document": "typedoc --out docs --excludeNotExported --excludePrivate --disableOutputCheck --gitRevision master",
+    "document": "typedoc --out docs --excludeNotExported --excludePrivate --disableOutputCheck --gitRevision master --exclude \"**/*index.ts\"",
     "prepare-github-pages": "npm run document && echo \"\" > ./docs/.nojekyll",
     "test": "karma start ./karma.conf.js --single-run",
     "test:debug": "karma start",
@@ -14,9 +14,9 @@
     "publish:config-npm": "replace '<EMAIL>' $NPM_EMAIL .npmrc && replace '<TOKEN>' $NPM_TOKEN .npmrc",
     "publish:copy-files": "cpy 'LICENSE' 'README.md' '.npmrc' '.npmignore' 'package.json' dist",
     "publish:pack": "cd dist && npm pack",
-    "publish:prepare": "tsc && npm run publish:config-npm && npm run publish:copy-files && npm run publish:pack",
-    "publish:package": "npm publish ./dist/gen-tech-scroll-manager-$TRAVIS_TAG.tgz",
-    "prepare-and-publish": "npm run publish:prepare && npm run publish:package"
+    "publish:prepare": "gtvu $TRAVIS_TAG && tsc && npm run publish:config-npm && npm run publish:copy-files && npm run publish:pack",
+    "publish:publish": "npm publish ./dist/gen-tech-scroll-manager-$TRAVIS_TAG.tgz",
+    "prepare-and-publish": "npm run publish:prepare && npm run publish:publish"
   },
   "repository": {
     "type": "git",

@@ -1,4 +1,3 @@
-import "jasmine";
 import { Subscription } from "rxjs";
 
 import { ScrollManager } from "./scroll-manager";
@@ -76,7 +75,7 @@ describe("Scroll Manager", () => {
     const manager = new ScrollManager();
 
     manager
-      .scrollToElement(testContainer, {offset: 50})
+      .scrollToElement(testContainer, {offsetTop: 50})
       .then(() => {
         expect(testContainer.getBoundingClientRect().top).toBe(-50);
         done();

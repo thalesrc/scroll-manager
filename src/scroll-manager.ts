@@ -2,7 +2,7 @@ import "smoothscroll-polyfill";
 
 import { first } from "rxjs/operators";
 import { ScrollObserver } from "./scroll-observer";
-import { ScrollToElementOptions, ScrollableContent } from './models';
+import { ScrollToElementOptions, ScrollableContent, ScrollPosition } from './models';
 
 /**
  * ### Scroll Manager
@@ -63,8 +63,8 @@ export class ScrollManager {
 	}
 
 	/**
-	 * ### Scroll the window into an element
-   *
+	 * ### Scroll to Element
+   * Scroll the window into an element
    * * * *
    * Example:
    * ```typescript
@@ -79,9 +79,12 @@ export class ScrollManager {
 	 */
 	public scrollToElement(
 		element: HTMLElement,
-		{animate = true, offset = 0 }: ScrollToElementOptions = {animate: true, offset: 0}
-	): Promise<number> {
-		window.scrollBy({top: element.getBoundingClientRect().top + offset, behavior: animate ? "smooth" : "instant"});
+		{animate = true, offsetTop = 0, offsetLeft = 0 }: ScrollToElementOptions = {animate: true, offsetTop: 0, offsetLeft: 0}
+	): Promise<ScrollPosition> {
+    const { top, left } = element.getBoundingClientRect();
+
+    window.scrollBy({top: top + offsetTop, left: left + offsetLeft, behavior: animate ? "smooth" : "instant"});
+
 		return this.root.scrollEnd.pipe(first()).toPromise();
 	}
 
@@ -89,8 +92,9 @@ export class ScrollManager {
 	 * Scrolls to the top smoothly
    * @returns A promise which resolves when the scrolling is completed
 	 */
-	public scrollTop(): Promise<number> {
-		window.scrollTo({top: 0, behavior: "smooth"});
+	public scrollTop(): Promise<ScrollPosition> {
+    window.scrollTo({top: 0, behavior: "smooth"});
+
 		return this.root.scrollEnd.pipe(first()).toPromise();
 	}
 }
