@@ -74,7 +74,7 @@ observer.remainingX.subscribe(position => {
 ```
 
 ## Performance
-By default, scroll-manager throttles scroll events for every 90ms.
+By default, scroll-manager throttles scroll events in every 90ms for performance prospects
 
 If you want to capture all events use `const observer = scrollManager.observe(target, 0);`
 

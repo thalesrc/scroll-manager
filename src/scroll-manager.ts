@@ -39,10 +39,11 @@ export class ScrollManager {
    * ```
    * * * *
 	 * @param target Scroll target
+   * @param throttleTime Time to throttle the scroll events
 	 */
-	public observe(target: ScrollableContent): ScrollObserver {
+	public observe(target: ScrollableContent, throttleTime = this.observerThrottleTime): ScrollObserver {
 		if (!this._buffer.has(target)) {
-			this._buffer.set(target, new ScrollObserver(target, this.observerThrottleTime));
+			this._buffer.set(target, new ScrollObserver(target, throttleTime));
 		}
 		return this._buffer.get(target);
 	}
