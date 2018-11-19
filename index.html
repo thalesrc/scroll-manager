@@ -63,16 +63,81 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="-gen-tech-scroll-manager">@gen-tech/scroll-manager</h1>
-				<p>Improved Scroll Events &amp; Scroll Management</p>
 				<p><a href="https://travis-ci.org/gen-tech/scroll-manager"><img src="https://travis-ci.org/gen-tech/scroll-manager.svg" alt="travis"></a>
 					<a href="https://coveralls.io/github/gen-tech/scroll-manager?branch=master"><img src="https://coveralls.io/repos/github/gen-tech/scroll-manager/badge.svg?branch=master" alt="Coverage Status"></a>
 					<a href="https://www.npmjs.com/package/@gen-tech/scroll-manager"><img src="https://img.shields.io/npm/v/@gen-tech/scroll-manager.svg" alt="npm"></a>
 					<a href="https://www.npmjs.com/package/@gen-tech/scroll-manager"><img src="https://img.shields.io/npm/dw/@gen-tech/scroll-manager.svg" alt="npm"></a>
+					<a href="https://github.com/ellerbrock/typescript-badges/"><img src="https://badges.frapsoft.com/typescript/version/typescript-next.svg?v=101" alt="TypeScript"></a>
 					<a href="https://www.patreon.com/alisahin"><img src="https://img.shields.io/badge/patreon-alisahin-orange.svg" alt="patreon"></a>
 				<a href="https://github.com/gen-tech/scroll-manager/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@gen-tech/scroll-manager.svg" alt="license"></a></p>
-				<h4 id="installation">Installation</h4>
+				<p>Improved Scroll Events &amp; Scroll Management for web development</p>
+				<blockquote>
+					<p>Supports horizontal scroll</p>
+				</blockquote>
+				<blockquote>
+					<p>Written with Typescript</p>
+				</blockquote>
+				<blockquote>
+					<p>Built with Rxjs</p>
+				</blockquote>
+				<h2 id="installation">Installation</h2>
 				<p><code>npm install @gen-tech/scroll-manager --save</code></p>
-				<p>All Documentation =&gt; <a href="https://gen-tech.github.io/scroll-manager">gen-tech.github.io/scroll-manager</a></p>
+				<h2 id="usage">Usage</h2>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> scrollManager <span class="hljs-keyword">from</span> <span class="hljs-string">"@gen-tech/scroll-manager"</span>;
+
+<span class="hljs-keyword">const</span> target = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">".scrollable-div"</span>);
+
+<span class="hljs-comment">// Create an observer for the target</span>
+<span class="hljs-keyword">const</span> observer = scrollManager.observe(target);
+
+<span class="hljs-comment">/**
+ * Subscribe to targets scrollY events
+ */</span>
+observer.scrollY.subscribe(<span class="hljs-function"><span class="hljs-params">position</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(position);
+});
+
+<span class="hljs-comment">/**
+ * To track window scroll, use `root`
+ */</span>
+scrollManager.root.scrollY.subscribe(<span class="hljs-function"><span class="hljs-params">position</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(position);
+});</code></pre>
+				<h3 id="some-of-available-scroll-event-streams">Some of Available Scroll Event Streams</h3>
+				<pre><code class="language-typescript">
+<span class="hljs-comment">// Scroll Start</span>
+observer.scrollStart.subscribe(<span class="hljs-function"><span class="hljs-params">position</span> =&gt;</span> {
+  <span class="hljs-comment">// {top: number, left: number}</span>
+});
+
+<span class="hljs-comment">// Scroll End</span>
+observer.scrollEnd.subscribe(<span class="hljs-function"><span class="hljs-params">position</span> =&gt;</span> {
+  <span class="hljs-comment">// {top: number, left: number}</span>
+});
+
+<span class="hljs-comment">// Scroll Direction Change</span>
+observer.scrollDirectionChange.subscribe(<span class="hljs-function"><span class="hljs-params">position</span> =&gt;</span> {
+  <span class="hljs-comment">// 1, 2, 4, 8 (TOP, BOTTOM, LEFT, RIGHT)</span>
+});
+
+<span class="hljs-comment">// Scrolling Down</span>
+observer.scrollingDown.subscribe(<span class="hljs-function"><span class="hljs-params">position</span> =&gt;</span> {
+  <span class="hljs-comment">// number</span>
+});
+
+
+<span class="hljs-comment">// Remaining scrollable area to the right in pixels</span>
+observer.remainingX.subscribe(<span class="hljs-function"><span class="hljs-params">position</span> =&gt;</span> {
+  <span class="hljs-comment">// number</span>
+});
+</code></pre>
+				<h2 id="performance">Performance</h2>
+				<p>By default, scroll-manager throttles scroll events in every 90ms for performance prospects</p>
+				<p>If you want to capture all events use <code>const observer = scrollManager.observe(target, 0);</code></p>
+				<h2 id="api-documentation">Api Documentation</h2>
+				<p><a href="https://gen-tech.github.io/scroll-manager">gen-tech.github.io/scroll-manager</a></p>
+				<h2 id="license">License</h2>
+				<p>MIT</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
