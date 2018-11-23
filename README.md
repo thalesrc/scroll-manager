@@ -9,8 +9,6 @@
 [![patreon](https://img.shields.io/badge/patreon-alisahin-orange.svg)](https://www.patreon.com/alisahin)
 [![license](https://img.shields.io/npm/l/@gen-tech/scroll-manager.svg)](https://github.com/gen-tech/scroll-manager/blob/master/LICENSE)
 
-------------------------------
-
 __Improved Scroll Events & Scroll Management for web development__
 
 > Supports horizontal scroll
