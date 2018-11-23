@@ -17,8 +17,6 @@ __Improved Scroll Events & Scroll Management for web development__
 
 > Built with Rxjs
 
-------------------------------
-
 ## Installation
 `npm install @gen-tech/scroll-manager --save`
 
