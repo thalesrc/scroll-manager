@@ -1,4 +1,6 @@
-# @gen-tech/scroll-manager
+![Gen Tech](https://avatars3.githubusercontent.com/u/39004692?s=88&v=4)
+# Scroll Manager
+
 [![travis](https://travis-ci.org/gen-tech/scroll-manager.svg)](https://travis-ci.org/gen-tech/scroll-manager)
 [![Coverage Status](https://coveralls.io/repos/github/gen-tech/scroll-manager/badge.svg?branch=master)](https://coveralls.io/github/gen-tech/scroll-manager?branch=master)
 [![npm](https://img.shields.io/npm/v/@gen-tech/scroll-manager.svg)](https://www.npmjs.com/package/@gen-tech/scroll-manager)
@@ -7,7 +9,7 @@
 [![patreon](https://img.shields.io/badge/patreon-alisahin-orange.svg)](https://www.patreon.com/alisahin)
 [![license](https://img.shields.io/npm/l/@gen-tech/scroll-manager.svg)](https://github.com/gen-tech/scroll-manager/blob/master/LICENSE)
 
-Improved Scroll Events & Scroll Management for web development
+__Improved Scroll Events & Scroll Management for web development__
 
 > Supports horizontal scroll
 
