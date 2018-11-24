@@ -2,7 +2,7 @@
 # Scroll Manager
 
 [![travis](https://travis-ci.org/thalesrc/scroll-manager.svg)](https://travis-ci.org/thalesrc/scroll-manager)
-[![Coverage Status](https://coveralls.io/repos/github/thalesrc/scroll-manager/badge.svg?branch=master)](https://coveralls.io/github/thalesrc/scroll-manager?branch=master)
+[![codecov](https://codecov.io/gh/thalesrc/scroll-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/thalesrc/scroll-manager)
 [![npm](https://img.shields.io/npm/v/@thalesrc/scroll-manager.svg)](https://www.npmjs.com/package/@thalesrch/scroll-manager)
 [![npm](https://img.shields.io/npm/dw/@thalesrch/scroll-manager.svg)](https://www.npmjs.com/package/@thalesrc/scroll-manager)
 [![TypeScript](https://badges.frapsoft.com/typescript/version/typescript-next.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
