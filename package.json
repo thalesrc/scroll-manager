@@ -1,10 +1,10 @@
 {
-  "name": "@gen-tech/scroll-manager",
+  "name": "@thalesrc/scroll-manager",
   "version": "0.0.0",
   "description": "Improved Scroll Events & Scroll Management",
   "main": "index.js",
   "typings": "index.d.ts",
-  "homepage": "https://gen-tech.github.io/scroll-manager",
+  "homepage": "https://thalesrc.github.io/scroll-manager",
   "scripts": {
     "document": "typedoc --out docs --excludeNotExported --excludePrivate --disableOutputCheck --gitRevision master --exclude \"**/*index.ts\"",
     "prepare-github-pages": "npm run document && echo \"\" > ./docs/.nojekyll",
