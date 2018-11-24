@@ -1,13 +1,13 @@
 ![Gen Tech](https://avatars3.githubusercontent.com/u/39004692?s=88&v=4)
 # Scroll Manager
 
-[![travis](https://travis-ci.org/gen-tech/scroll-manager.svg)](https://travis-ci.org/gen-tech/scroll-manager)
-[![Coverage Status](https://coveralls.io/repos/github/gen-tech/scroll-manager/badge.svg?branch=master)](https://coveralls.io/github/gen-tech/scroll-manager?branch=master)
-[![npm](https://img.shields.io/npm/v/@gen-tech/scroll-manager.svg)](https://www.npmjs.com/package/@gen-tech/scroll-manager)
-[![npm](https://img.shields.io/npm/dw/@gen-tech/scroll-manager.svg)](https://www.npmjs.com/package/@gen-tech/scroll-manager)
+[![travis](https://travis-ci.org/thalesrc/scroll-manager.svg)](https://travis-ci.org/thalesrc/scroll-manager)
+[![Coverage Status](https://coveralls.io/repos/github/thalesrc/scroll-manager/badge.svg?branch=master)](https://coveralls.io/github/thalesrc/scroll-manager?branch=master)
+[![npm](https://img.shields.io/npm/v/@thalesrc/scroll-manager.svg)](https://www.npmjs.com/package/@thalesrch/scroll-manager)
+[![npm](https://img.shields.io/npm/dw/@thalesrch/scroll-manager.svg)](https://www.npmjs.com/package/@thalesrc/scroll-manager)
 [![TypeScript](https://badges.frapsoft.com/typescript/version/typescript-next.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
 [![patreon](https://img.shields.io/badge/patreon-alisahin-orange.svg)](https://www.patreon.com/alisahin)
-[![license](https://img.shields.io/npm/l/@gen-tech/scroll-manager.svg)](https://github.com/gen-tech/scroll-manager/blob/master/LICENSE)
+[![license](https://img.shields.io/npm/l/@thalesrc/scroll-manager.svg)](https://github.com/thalesrc/scroll-manager/blob/master/LICENSE)
 
 __Improved Scroll Events & Scroll Management for web development__
 
@@ -18,11 +18,11 @@ __Improved Scroll Events & Scroll Management for web development__
 > Built with Rxjs
 
 ## Installation
-`npm install @gen-tech/scroll-manager --save`
+`npm install @thalesrc/scroll-manager --save`
 
 ## Usage
 ```typescript
-import scrollManager from "@gen-tech/scroll-manager";
+import scrollManager from "@thalesrc/scroll-manager";
 
 const target = document.querySelector(".scrollable-div");
 
@@ -81,7 +81,7 @@ By default, scroll-manager throttles scroll events in every 90ms for performance
 If you want to capture all events use `const observer = scrollManager.observe(target, 0);`
 
 ## Api Documentation
-[gen-tech.github.io/scroll-manager](https://gen-tech.github.io/scroll-manager)
+[thalesrc.github.io/scroll-manager](https://thalesrc.github.io/scroll-manager)
 
 ## License
 MIT
