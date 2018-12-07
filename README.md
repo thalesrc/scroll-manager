@@ -4,7 +4,7 @@
 [![travis](https://travis-ci.org/thalesrc/scroll-manager.svg)](https://travis-ci.org/thalesrc/scroll-manager)
 [![codecov](https://codecov.io/gh/thalesrc/scroll-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/thalesrc/scroll-manager)
 [![npm](https://img.shields.io/npm/v/@thalesrc/scroll-manager.svg)](https://www.npmjs.com/package/@thalesrch/scroll-manager)
-[![npm](https://img.shields.io/npm/dw/@thalesrch/scroll-manager.svg)](https://www.npmjs.com/package/@thalesrc/scroll-manager)
+[![npm](https://img.shields.io/npm/dw/@thalesrc/scroll-manager.svg)](https://www.npmjs.com/package/@thalesrc/scroll-manager)
 [![TypeScript](https://badges.frapsoft.com/typescript/version/typescript-next.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
 [![patreon](https://img.shields.io/badge/patreon-alisahin-orange.svg)](https://www.patreon.com/alisahin)
 [![license](https://img.shields.io/npm/l/@thalesrc/scroll-manager.svg)](https://github.com/thalesrc/scroll-manager/blob/master/LICENSE)
